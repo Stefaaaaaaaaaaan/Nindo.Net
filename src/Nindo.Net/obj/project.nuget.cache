@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "lD7Y7WXb3UqfFVYgVCze+W2zUEX05DJz3EcWYdfcb8CrvN79H8I/XtzNbJdnIE45XBfu2LYu67IqvzI3RfTZ+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alexa\\Desktop\\Nindo.Net\\src\\Nindo.Net\\Nindo.Net.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alexa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Alexa\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Alexa\\.nuget\\packages\\newtonsoft.json\\8.0.3\\newtonsoft.json.8.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 8.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}
