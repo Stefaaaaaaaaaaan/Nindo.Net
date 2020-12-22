@@ -19,9 +19,19 @@ namespace Nindo.Net
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
-            var url = $"{_baseUrl}ranks/charts/{requestPlatform}/rankViews/{requestSize}";
 
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankViews/{requestSize}");
+            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<Rank[]> GetRankViewerAsync(RankViewerPlatform platform, Size size)
+        {
+            var requestPlatform = platform.ToApiString();
+            var requestSize = size.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankViewer/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;

@@ -17,5 +17,16 @@ namespace Nindo.Net.Helpers
                     throw new NotSupportedException("Invalid platform type.");
             }
         }
+
+        internal static string ToApiString(this RankViewerPlatform platform)
+        {
+            switch (platform)
+            {
+                case RankViewerPlatform.Twitch:
+                    return "twitch";
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
+        }
     }
 }
