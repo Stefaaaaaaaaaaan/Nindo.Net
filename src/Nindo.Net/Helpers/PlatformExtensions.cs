@@ -29,6 +29,17 @@ namespace Nindo.Net.Helpers
             }
         }
 
+        internal static string ToApiString(this RankRetweets platform)
+        {
+            switch (platform)
+            {
+                case RankRetweets.Twitter:
+                    return "twitter";
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
+        }
+
         internal static string ToApiString(this RankAllPlatform platform)
         {
             switch (platform)
@@ -41,6 +52,8 @@ namespace Nindo.Net.Helpers
                     return "tiktok";
                 case RankAllPlatform.Twitch:
                     return "twitch";
+                case RankAllPlatform.Twitter:
+                    return "twitter";
                 default:
                     throw new NotSupportedException("Invalid platform type.");
             }
