@@ -36,5 +36,16 @@ namespace Nindo.Net
 
             return apiData;
         }
+
+        public async Task<Rank[]> GetRankAsync(RankAllPlatform platform, Size size)
+        {
+            var requestPlatform = platform.ToApiString();
+            var requestSize = size.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rank/{requestSize}");
+            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+
+            return apiData;
+        }
     }
 }

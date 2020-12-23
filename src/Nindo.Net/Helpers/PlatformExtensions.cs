@@ -28,5 +28,22 @@ namespace Nindo.Net.Helpers
                     throw new NotSupportedException("Invalid platform type.");
             }
         }
+
+        internal static string ToApiString(this RankAllPlatform platform)
+        {
+            switch (platform)
+            {
+                case RankAllPlatform.Youtube:
+                    return "youtube";
+                case RankAllPlatform.Instagram:
+                    return "instagram";
+                case RankAllPlatform.TikTok:
+                    return "tiktok";
+                case RankAllPlatform.Twitch:
+                    return "twitch";
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
+        }
     }
 }

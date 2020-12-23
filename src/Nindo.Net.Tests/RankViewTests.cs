@@ -36,5 +36,25 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+
+        [Theory]
+        [InlineData(RankAllPlatform.Youtube, Size.Big)]
+        [InlineData(RankAllPlatform.Instagram, Size.Big)]
+        [InlineData(RankAllPlatform.TikTok, Size.Big)]
+        [InlineData(RankAllPlatform.Twitch, Size.Big)]
+        [InlineData(RankAllPlatform.Youtube, Size.Small)]
+        [InlineData(RankAllPlatform.Instagram, Size.Small)]
+        [InlineData(RankAllPlatform.TikTok, Size.Small)]
+        [InlineData(RankAllPlatform.Twitch, Size.Small)]
+        public async Task ToApiString_RankPlatformEnumsProvided_GivesBackPropperlyFormattedPlatformForAPI(RankAllPlatform platform, Size size)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetRankAsync(platform, size);
+            //Assert
+            Assert.NotNull(result);
+        }
     }
 }
