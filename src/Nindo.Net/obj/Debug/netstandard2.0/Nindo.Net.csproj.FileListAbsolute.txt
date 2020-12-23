@@ -1,9 +1,0 @@
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\bin\Debug\netstandard2.0\Nindo.Net.deps.json
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\bin\Debug\netstandard2.0\Nindo.Net.dll
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\bin\Debug\netstandard2.0\Nindo.Net.pdb
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.csprojAssemblyReference.cache
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.AssemblyInfoInputs.cache
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.AssemblyInfo.cs
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.csproj.CoreCompileInputs.cache
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.dll
-C:\Users\Alexa\Desktop\Nindo.Net\src\Nindo.Net\obj\Debug\netstandard2.0\Nindo.Net.pdb
