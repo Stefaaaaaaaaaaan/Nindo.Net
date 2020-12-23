@@ -8,7 +8,7 @@ namespace Nindo.Net.Helpers
         public static async Task<Stream> GetStats(string apiUrl)
         {
             var jsonAsStream = await ApiHelper.ApiClient.GetStreamAsync(apiUrl);
-            return jsonAsStream ?? null;
+            return jsonAsStream;
         }
     }
 }

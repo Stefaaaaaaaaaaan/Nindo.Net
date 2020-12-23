@@ -48,7 +48,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankSubGain(RankAllPlatform platform, Size size)
+        public async Task<Rank[]> GetRankSubGainAsync(RankAllPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -59,7 +59,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankLikes(RankAllPlatform platform, Size size)
+        public async Task<Rank[]> GetRankLikesAsync(RankLikesPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -70,7 +70,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankPeakViewer(RankAllPlatform platform, Size size)
+        public async Task<Rank[]> GetRankPeakViewerAsync(RankViewerPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -81,7 +81,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankRetweets(RankRetweets platform, Size size)
+        public async Task<Rank[]> GetRankRetweetsAsync(RankRetweets platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -92,34 +92,34 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetPastMilestones()
+        public async Task<Milestone[]> GetPastMilestonesAsync()
         {
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/pastMilestones");
-            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+            var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
         }
 
-        public async Task<Rank[]> GetMilestones()
+        public async Task<Milestone[]> GetMilestonesAsync()
         {
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/milestones");
-            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+            var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
         }
 
-        public async Task<Rank[]> search(string name)
+        public async Task<Search[]> GetSearchAsync(string term)
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}search/smart/{name}");
-            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}search/smart/{term}");
+            var apiData = await _jsonHelper.Deserialise<Search[]>(jsonAsStream);
 
             return apiData;
         }
 
-        public async Task<Rank[]> viral()
+        public async Task<Viral[]> GetViralAsync()
         {
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}viral");
-            var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+            var apiData = await _jsonHelper.Deserialise<Viral[]>(jsonAsStream);
 
             return apiData;
         }

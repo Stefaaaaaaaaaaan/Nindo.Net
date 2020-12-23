@@ -40,6 +40,23 @@ namespace Nindo.Net.Helpers
             }
         }
 
+        internal static string ToApiString(this RankLikesPlatform platform)
+        {
+            switch (platform)
+            {
+                case RankLikesPlatform.Youtube:
+                    return "youtube";
+                case RankLikesPlatform.Instagram:
+                    return "instagram";
+                case RankLikesPlatform.TikTok:
+                    return "tiktok";
+                case RankLikesPlatform.Twitter:
+                    return "twitter";
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
+        }
+
         internal static string ToApiString(this RankAllPlatform platform)
         {
             switch (platform)

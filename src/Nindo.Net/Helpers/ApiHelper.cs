@@ -5,7 +5,7 @@ namespace Nindo.Net.Helpers
 {
     public static class ApiHelper
     {
-        public static HttpClient ApiClient { get; set; } = new HttpClient();
+        public static HttpClient ApiClient { get; } = new HttpClient();
 
         static ApiHelper()
         {
