@@ -2,6 +2,6 @@
 {
     public enum RankViewerPlatform
     {
-        Twitch = 1,
+        Twitch = 0,
     }
 }
