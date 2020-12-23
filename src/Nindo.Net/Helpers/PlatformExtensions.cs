@@ -7,73 +7,55 @@ namespace Nindo.Net.Helpers
     {
         internal static string ToApiString(this RankViewsPlatform platform)
         {
-            switch (platform)
+            return platform switch
             {
-                case RankViewsPlatform.Youtube:
-                    return "youtube";
-                case RankViewsPlatform.TikTok:
-                    return "tiktok";
-                default:
-                    throw new NotSupportedException("Invalid platform type.");
-            }
+                RankViewsPlatform.Youtube => "youtube",
+                RankViewsPlatform.TikTok => "tiktok",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
         }
 
         internal static string ToApiString(this RankViewerPlatform platform)
         {
-            switch (platform)
+            return platform switch
             {
-                case RankViewerPlatform.Twitch:
-                    return "twitch";
-                default:
-                    throw new NotSupportedException("Invalid platform type.");
-            }
+                RankViewerPlatform.Twitch => "twitch",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
         }
 
         internal static string ToApiString(this RankRetweets platform)
         {
-            switch (platform)
+            return platform switch
             {
-                case RankRetweets.Twitter:
-                    return "twitter";
-                default:
-                    throw new NotSupportedException("Invalid platform type.");
-            }
+                RankRetweets.Twitter => "twitter",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
         }
 
         internal static string ToApiString(this RankLikesPlatform platform)
         {
-            switch (platform)
+            return platform switch
             {
-                case RankLikesPlatform.Youtube:
-                    return "youtube";
-                case RankLikesPlatform.Instagram:
-                    return "instagram";
-                case RankLikesPlatform.TikTok:
-                    return "tiktok";
-                case RankLikesPlatform.Twitter:
-                    return "twitter";
-                default:
-                    throw new NotSupportedException("Invalid platform type.");
-            }
+                RankLikesPlatform.Youtube => "youtube",
+                RankLikesPlatform.Instagram => "instagram",
+                RankLikesPlatform.TikTok => "tiktok",
+                RankLikesPlatform.Twitter => "twitter",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
         }
 
         internal static string ToApiString(this RankAllPlatform platform)
         {
-            switch (platform)
+            return platform switch
             {
-                case RankAllPlatform.Youtube:
-                    return "youtube";
-                case RankAllPlatform.Instagram:
-                    return "instagram";
-                case RankAllPlatform.TikTok:
-                    return "tiktok";
-                case RankAllPlatform.Twitch:
-                    return "twitch";
-                case RankAllPlatform.Twitter:
-                    return "twitter";
-                default:
-                    throw new NotSupportedException("Invalid platform type.");
-            }
+                RankAllPlatform.Youtube => "youtube",
+                RankAllPlatform.Instagram => "instagram",
+                RankAllPlatform.TikTok => "tiktok",
+                RankAllPlatform.Twitch => "twitch",
+                RankAllPlatform.Twitter => "twitter",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
         }
     }
 }

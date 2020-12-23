@@ -3,6 +3,6 @@
     public enum RankViewsPlatform
     {
         Youtube = 0,
-        TikTok = 1,
+        TikTok = 1
     }
 }

@@ -5,6 +5,6 @@
         Youtube = 0,
         Instagram = 1,
         TikTok = 2,
-        Twitter = 4
+        Twitter = 3
     }
 }

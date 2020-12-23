@@ -2,6 +2,6 @@
 {
     public enum RankRetweets
     {
-        Twitter = 0,
+        Twitter = 0
     }
 }
