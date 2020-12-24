@@ -11,6 +11,6 @@ namespace Nindo.Net.Models
         public string ExpectedTime { get; set; }
 
         [JsonProperty("_channel")] 
-        public Channel Channel { get; set; }
+        public MilestoneChannel MilestoneChannel { get; set; }
     }
 }

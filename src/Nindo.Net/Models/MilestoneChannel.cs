@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Nindo.Net.Models
 {
-    public class Channel
+    public class MilestoneChannel
     {
         [JsonProperty("id")]
         public string Id { get; set; }
