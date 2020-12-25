@@ -191,7 +191,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<object> GetPosts(PostsPlatform platform, string PlatformID)
+        public async Task<object> GetPostsAsync(PostsPlatform platform, string PlatformID)
         {
             var requestPlatform = platform.ToApiString();
 
