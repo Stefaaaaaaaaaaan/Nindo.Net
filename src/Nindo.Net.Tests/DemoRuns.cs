@@ -230,5 +230,53 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+
+        [Theory]
+        [InlineData(RankAllPlatform.Youtube, "f0f5e45ab17540c5d1164dff24503b1a")]
+        [InlineData(RankAllPlatform.TikTok, "1e9c386cea9af5ea3e1e8f9b18abdb20")]
+        [InlineData(RankAllPlatform.Instagram, "09594e8d993079fe551a2aa8aacf1fe1")]
+        [InlineData(RankAllPlatform.Twitch, "f87d9934c783506a1595e675de0996ad")]
+        [InlineData(RankAllPlatform.Twitter, "f31bfbddd8b929e5fd232b5061d0a83b")]
+
+        [InlineData(RankAllPlatform.Youtube, "5383c16fc1471ee057f3e2bf268a43cc")]
+        [InlineData(RankAllPlatform.TikTok, "e09249eceec86d098704ad6982ce2c1c")]
+        [InlineData(RankAllPlatform.Instagram, "185366e42ce08b1026160fec85dcbce1")]
+        [InlineData(RankAllPlatform.Twitch, "cbfa57bcdc0130185b93f8e078c0d104")]
+        [InlineData(RankAllPlatform.Twitter, "a70a94eb7b5e2a40cc848cf6ebded7ec")]
+        public async Task DemoRun_GetChannelHystoricAsync(RankAllPlatform platform, string userId)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetHistoricChannelAsync(platform, userId);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData(PostsPlatform.TikTok, "1e9c386cea9af5ea3e1e8f9b18abdb20")]
+        [InlineData(PostsPlatform.Instagram, "09594e8d993079fe551a2aa8aacf1fe1")]
+        [InlineData(PostsPlatform.Twitter, "f31bfbddd8b929e5fd232b5061d0a83b")]
+
+        [InlineData(PostsPlatform.TikTok, "f4a99c87beb995b671952fa98bc96e7e")]
+        [InlineData(PostsPlatform.Instagram, "45a1eff68a0b6884d389dbee4d245ce3")]
+        [InlineData(PostsPlatform.Twitter, "4c7ba12d66d4190555664ae74a279308")]
+
+        [InlineData(PostsPlatform.TikTok, "5386053644dea65b812e936f2e276434")]
+        [InlineData(PostsPlatform.Instagram, "fb1f3d1038140ff87be4b3a0cdd173d5")]
+        [InlineData(PostsPlatform.Twitter, "39580de32b18ddf0cc6ee12de8607db4")]
+        public async Task DemoRun_GetPostsAsync(PostsPlatform platform, string userId)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetPosts(platform, userId);
+
+            //Assert
+            Assert.NotNull(result);
+        }
     }
 }

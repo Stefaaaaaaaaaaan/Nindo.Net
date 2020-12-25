@@ -154,11 +154,63 @@ namespace Nindo.Net
             return apiData;
         }
 
+        public async Task<object> GetHistoricChannelAsync(RankAllPlatform platform, string userId)
+        {
+            var requestPlatform = platform.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}channel/historic/{requestPlatform}/{userId}");
+            object apiData;
+            switch (platform)
+            {
+                case RankAllPlatform.Youtube:
+                    apiData = await _jsonHelper.Deserialise<YoutubeHistoricChannel[]>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Instagram:
+                    apiData = await _jsonHelper.Deserialise<HistoricChannelBase[]>(jsonAsStream);
+                    break;
+                case RankAllPlatform.TikTok:
+                    apiData = await _jsonHelper.Deserialise<HistoricChannelBase[]>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Twitch:
+                    apiData = await _jsonHelper.Deserialise<HistoricChannelBase[]>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Twitter:
+                    apiData = await _jsonHelper.Deserialise<HistoricChannelBase[]>(jsonAsStream);
+                    break;
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
+            return apiData;
+        }
+
         public async Task<Artist> GetArtistAsync(string userId)
         {
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}artist/{userId}");
             var apiData = await _jsonHelper.Deserialise<Artist>(jsonAsStream);
 
+            return apiData;
+        }
+
+        public async Task<object> GetPostsAsync(PostsPlatform platform, string PlatformID)
+        {
+            var requestPlatform = platform.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}posts/{requestPlatform}/{PlatformID}");
+            object apiData;
+            switch (platform)
+            {
+                case PostsPlatform.Instagram:
+                    apiData = await _jsonHelper.Deserialise<PostBase[]>(jsonAsStream);
+                    break;
+                case PostsPlatform.TikTok:
+                    apiData = await _jsonHelper.Deserialise<PostBase[]>(jsonAsStream);
+                    break;
+                case PostsPlatform.Twitter:
+                    apiData = await _jsonHelper.Deserialise<PostBase[]>(jsonAsStream);
+                    break;
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
             return apiData;
         }
     }
