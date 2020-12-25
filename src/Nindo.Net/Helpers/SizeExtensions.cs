@@ -7,15 +7,12 @@ namespace Nindo.Net.Helpers
     {
         internal static string ToApiString(this Size size)
         {
-            switch (size)
+            return size switch
             {
-                case Size.Small:
-                    return "small";
-                case Size.Big:
-                    return "big";
-                default:
-                    throw new NotSupportedException("Invalid size type.");
-            }
+                Size.Small => "small",
+                Size.Big => "big",
+                _ => throw new NotSupportedException("Invalid size type.")
+            };
         }
     }
 }

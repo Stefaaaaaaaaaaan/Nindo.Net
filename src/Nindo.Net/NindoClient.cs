@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Nindo.Net.Helpers;
 using Nindo.Net.Models;
 using Nindo.Net.Models.Enums;
@@ -121,6 +122,35 @@ namespace Nindo.Net
             var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}viral");
             var apiData = await _jsonHelper.Deserialise<Viral[]>(jsonAsStream);
 
+            return apiData;
+        }
+
+        public async Task<object> GetChannelInformationAsync(RankAllPlatform platform, string userId)
+        {
+            var requestPlatform = platform.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}channel/{requestPlatform}/{userId}");
+            object apiData;
+            switch (platform)
+            {
+                case RankAllPlatform.Youtube:
+                    apiData = await _jsonHelper.Deserialise<YoutubeChannel>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Instagram:
+                    apiData = await _jsonHelper.Deserialise<InstagramChannel>(jsonAsStream);
+                    break;
+                case RankAllPlatform.TikTok:
+                    apiData = await _jsonHelper.Deserialise<TiktokChannel>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Twitch:
+                    apiData = await _jsonHelper.Deserialise<TwitchChannel>(jsonAsStream);
+                    break;
+                case RankAllPlatform.Twitter:
+                    apiData = await _jsonHelper.Deserialise<TwitterChannel>(jsonAsStream);
+                    break;
+                default:
+                    throw new NotSupportedException("Invalid platform type.");
+            }
             return apiData;
         }
     }

@@ -5,16 +5,16 @@ namespace Nindo.Net.Models
     public class TiktokChannel : ChannelBase
     {
         [JsonProperty("followings")] 
-        public ulong Followings { get; set; }
+        public string Followings { get; set; }
 
         [JsonProperty("totalLikes")]
-        public ulong TotalLikes { get; set; }
+        public string TotalLikes { get; set; }
 
         [JsonProperty("likesGiven")]
-        public ulong LikesGiven { get; set; }
+        public string LikesGiven { get; set; }
 
         [JsonProperty("totalPosts")]
-        public ulong TotalPosts { get; set; }
+        public string TotalPosts { get; set; }
 
         [JsonProperty("avgLikes5")]
         public ulong AvgLikesFive { get; set; }
@@ -35,10 +35,10 @@ namespace Nindo.Net.Models
         public ulong RankLikes { get; set; }
 
         [JsonProperty("rankComments")]
-        public ulong RankComments { get; set; }
+        public string RankComments { get; set; }
 
         [JsonProperty("rankShares")]
-        public ulong RankShares { get; set; }
+        public string RankShares { get; set; }
 
         [JsonProperty("rankViews")]
         public ulong RankViews { get; set; }

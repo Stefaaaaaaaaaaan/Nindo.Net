@@ -41,7 +41,7 @@ namespace Nindo.Net.Models
         public ulong[] StreamDays { get; set; }
 
         [JsonProperty("streamHours")] 
-        public StreamHours StreamHours { get; set; }  
+        public StreamHours[] StreamHours { get; set; }  
 
 
     }

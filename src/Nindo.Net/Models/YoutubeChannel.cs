@@ -50,12 +50,12 @@ namespace Nindo.Net.Models
         public ulong RankLikes { get; set; }
 
         [JsonProperty("rankDislikes")]
-        public ulong RankDislikes { get; set; }
+        public string RankDislikes { get; set; }
 
         [JsonProperty("calculatedDailyViews")]
-        public ulong CalculatedDailyViews { get; set; }
+        public string CalculatedDailyViews { get; set; }
 
         [JsonProperty("estimateSubs")]
-        public ulong EstimateSubs { get; set; }
+        public string EstimateSubs { get; set; }
     }
 }
