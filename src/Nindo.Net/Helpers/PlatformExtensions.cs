@@ -33,6 +33,17 @@ namespace Nindo.Net.Helpers
             };
         }
 
+        internal static string ToApiString(this PostsPlatform platform)
+        {
+            return platform switch
+            {
+                PostsPlatform.Instagram => "instagram",
+                PostsPlatform.TikTok => "tiktok",
+                PostsPlatform.Twitter => "twitter",
+                _ => throw new NotSupportedException("Invalid platform type.")
+            };
+        }
+
         internal static string ToApiString(this RankLikesPlatform platform)
         {
             return platform switch
