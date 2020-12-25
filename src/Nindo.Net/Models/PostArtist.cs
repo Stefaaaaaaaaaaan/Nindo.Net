@@ -2,7 +2,7 @@
 
 namespace Nindo.Net.Models
 {
-    public class PostArtist : Artist
+    public class PostArtistBase : ArtistBase
     {
         [JsonProperty("_id")]
         public string Id { get; set; }

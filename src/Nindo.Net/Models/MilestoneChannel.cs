@@ -21,6 +21,6 @@ namespace Nindo.Net.Models
         public string ArtistId { get; set; }
 
         [JsonProperty("_artist")]
-        public Artist Artist { get; set; }
+        public ArtistBase ArtistBase { get; set; }
     }
 }

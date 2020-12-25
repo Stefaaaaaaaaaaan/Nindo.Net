@@ -21,6 +21,6 @@ namespace Nindo.Net.Models
         public string LastPostId { get; set; }
 
         [JsonProperty("_artist")]
-        public PostArtist Artist { get; set; }
+        public PostArtistBase ArtistBase { get; set; }
     }
 }

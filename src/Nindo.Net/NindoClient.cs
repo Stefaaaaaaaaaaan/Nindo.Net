@@ -153,5 +153,13 @@ namespace Nindo.Net
             }
             return apiData;
         }
+
+        public async Task<Artist> GetArtistAsync(string userId)
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}artist/{userId}");
+            var apiData = await _jsonHelper.Deserialise<Artist>(jsonAsStream);
+
+            return apiData;
+        }
     }
 }

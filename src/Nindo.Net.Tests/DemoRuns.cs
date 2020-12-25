@@ -207,5 +207,28 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+
+        [Theory]
+        [InlineData("a8f91412e41308d8ee6a30b3daf963bc")]
+        [InlineData("0c57f0ef628f958a06cb2f19af8c269d")]
+        [InlineData("fd477856f8ca52f4e900895a06db7b7e")]
+        [InlineData("46aac573a0a8bb9741db690a104f4e5e")]
+        [InlineData("b21e98604165e556fe0e4272d144331c")]
+        [InlineData("c3f37dc22a0a2dfb9a387216c73eaceb")]
+        [InlineData("9f255dd5689d452d65dc80377491ef65")]
+        [InlineData("d2ebc08a18eda92c8a809c8490ba7b55")]
+        [InlineData("21a3a3969aa81e318cd1cc8a549df55e")]
+        [InlineData("7a6db13d49fe85ef8d13d4c329317c92")]
+        public async Task DemoRun_GetArtistAsync(string userId)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetArtistAsync(userId);
+
+            //Assert
+            Assert.NotNull(result);
+        }
     }
 }
