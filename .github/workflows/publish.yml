@@ -1,4 +1,4 @@
-name: Publish Packages
+name: Deploy to NuGet
 
 on:
   push:
@@ -15,10 +15,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+
     - name: Install dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      
     - name: Publish Nindo.Net
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
