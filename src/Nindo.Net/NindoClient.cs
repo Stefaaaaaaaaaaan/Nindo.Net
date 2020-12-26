@@ -213,5 +213,45 @@ namespace Nindo.Net
             }
             return apiData;
         }
+
+        public async Task<CouponBase> GetCouponsAsync()
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons");
+            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<string[]> GetCouponBranchesAsync()
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/branches");
+            var apiData = await _jsonHelper.Deserialise<string[]>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<CouponBrands[]> GetCouponsBrandsAsync()
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/brands");
+            var apiData = await _jsonHelper.Deserialise<CouponBrands[]>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<CouponBase> GetCouponsBySortAsync(String categorie)
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/by/{categorie}");
+            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<CouponBase> GetCouponsForBranchAsync(String id)
+        {
+            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/for/{id}");
+            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+
+            return apiData;
+        }
     }
 }
