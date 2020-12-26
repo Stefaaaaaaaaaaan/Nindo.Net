@@ -9,13 +9,13 @@ namespace Nindo.Net.Models
         public string Name { get; set; }
 
         [JsonProperty("brandID")]
-        public string? BrandID { get; set; }
+        public string? BrandId { get; set; }
 
         [JsonProperty("id")]
         public string Id { get; set; }
 
         [JsonProperty("serachChannels")]
-        public string[]? serachChannels { get; set; }
+        public string[]? SerachChannels { get; set; }
 
         [JsonProperty("channels")]
         public string[]? Channels { get; set; }

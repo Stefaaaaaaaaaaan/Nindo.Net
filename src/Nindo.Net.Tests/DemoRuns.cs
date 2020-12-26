@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Nindo.Net.Models.Enums;
 using Xunit;
 
