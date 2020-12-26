@@ -13,4 +13,7 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>$copyright$</copyright>
   </metadata>
+      <files>
+        <file src="icon.png" target="" />
+    </files>
 </package>
