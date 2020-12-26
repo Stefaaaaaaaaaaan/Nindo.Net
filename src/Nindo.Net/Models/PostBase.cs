@@ -12,7 +12,7 @@ namespace Nindo.Net.Models
         public string Content { get; set; }
 
         [JsonProperty("published")]
-        public string Published { get; set; }
+        public DateTime Published { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
