@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Nindo.Net.Models.Enums;
 using Xunit;
 
@@ -345,10 +347,24 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetCouponsForBranchAsync(id);
+            var result = await client.GetCouponsByBranchAsync(id);
 
             //Assert
             Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData("Trinkdose", "TestName", "21AB$", "20%")]
+        public async Task DemoRun_SubmitCouponAsync(string brand, string artistName, string code, string discount)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.SubmitCouponAsync(brand, artistName, code, discount);
+
+            //Assert
+            Assert.Equal("OK", result.ReasonPhrase);
         }
     }
 }

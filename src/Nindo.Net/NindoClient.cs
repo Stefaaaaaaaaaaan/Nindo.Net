@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Nindo.Net.Helpers;
 using Nindo.Net.Models;
@@ -21,7 +23,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankViews/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankViews/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -32,7 +34,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankViewer/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankViewer/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -43,7 +45,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rank/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rank/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -54,7 +56,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankSubGain/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankSubGain/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -65,7 +67,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankLikes/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankLikes/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -76,7 +78,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankPeakViewer/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankPeakViewer/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -87,7 +89,7 @@ namespace Nindo.Net
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/charts/{requestPlatform}/rankRetweets/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/charts/{requestPlatform}/rankRetweets/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -95,7 +97,7 @@ namespace Nindo.Net
 
         public async Task<Milestone[]> GetPastMilestonesAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/pastMilestones");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/pastMilestones");
             var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
@@ -103,7 +105,7 @@ namespace Nindo.Net
 
         public async Task<Milestone[]> GetMilestonesAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}ranks/milestones");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}ranks/milestones");
             var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
@@ -111,7 +113,7 @@ namespace Nindo.Net
 
         public async Task<Search[]> GetSearchAsync(string term)
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}search/smart/{term}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}search/smart/{term}");
             var apiData = await _jsonHelper.Deserialise<Search[]>(jsonAsStream);
 
             return apiData;
@@ -119,7 +121,7 @@ namespace Nindo.Net
 
         public async Task<Viral[]> GetViralAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}viral");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}viral");
             var apiData = await _jsonHelper.Deserialise<Viral[]>(jsonAsStream);
 
             return apiData;
@@ -129,7 +131,7 @@ namespace Nindo.Net
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}channel/{requestPlatform}/{userId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}channel/{requestPlatform}/{userId}");
             object apiData;
             switch (platform)
             {
@@ -158,7 +160,7 @@ namespace Nindo.Net
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}channel/historic/{requestPlatform}/{userId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}channel/historic/{requestPlatform}/{userId}");
             object apiData;
             switch (platform)
             {
@@ -185,7 +187,7 @@ namespace Nindo.Net
 
         public async Task<Artist> GetArtistAsync(string userId)
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}artist/{userId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}artist/{userId}");
             var apiData = await _jsonHelper.Deserialise<Artist>(jsonAsStream);
 
             return apiData;
@@ -195,7 +197,7 @@ namespace Nindo.Net
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}posts/{requestPlatform}/{PlatformID}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}posts/{requestPlatform}/{PlatformID}");
             object apiData;
             switch (platform)
             {
@@ -214,17 +216,17 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<CouponBase> GetCouponsAsync()
+        public async Task<Coupons> GetCouponsAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons");
-            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons");
+            var apiData = await _jsonHelper.Deserialise<Coupons>(jsonAsStream);
 
             return apiData;
         }
 
         public async Task<string[]> GetCouponBranchesAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/branches");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/branches");
             var apiData = await _jsonHelper.Deserialise<string[]>(jsonAsStream);
 
             return apiData;
@@ -232,26 +234,41 @@ namespace Nindo.Net
 
         public async Task<CouponBrands[]> GetCouponsBrandsAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/brands");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/brands");
             var apiData = await _jsonHelper.Deserialise<CouponBrands[]>(jsonAsStream);
 
             return apiData;
         }
 
-        public async Task<CouponBase> GetCouponsBySortAsync(String categorie)
+        public async Task<Coupons> GetCouponsBySortAsync(string categorie)
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/by/{categorie}");
-            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/by/{categorie}");
+            var apiData = await _jsonHelper.Deserialise<Coupons>(jsonAsStream);
 
             return apiData;
         }
 
-        public async Task<CouponBase> GetCouponsForBranchAsync(String id)
+        public async Task<Coupons> GetCouponsByBranchAsync(string id)
         {
-            var jsonAsStream = await ApiProcessor.GetStats($"{_baseUrl}coupons/for/{id}");
-            var apiData = await _jsonHelper.Deserialise<CouponBase>(jsonAsStream);
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/for/{id}");
+            var apiData = await _jsonHelper.Deserialise<Coupons>(jsonAsStream);
 
             return apiData;
+        }
+
+        public async Task<HttpResponseMessage> SubmitCouponAsync(string brand, string artistName, string code, string discount)
+        {
+            var couponInformation =
+                $"\"brand\":\"{brand}\",\"code\":\"{code}\",\"discount\":\"{discount}\",\"artistName\":\"{artistName}\"";
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("content", "{"+couponInformation+"}"),
+                new KeyValuePair<string, string>("current", "0"),
+                new KeyValuePair<string, string>("type", "newCoupon")
+
+            }); var responseMessage = await ApiProcessor.PostAsync($"{_baseUrl}feedback", content);
+
+            return responseMessage;
         }
     }
 }
