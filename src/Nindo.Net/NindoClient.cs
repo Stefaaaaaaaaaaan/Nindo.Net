@@ -18,7 +18,7 @@ namespace Nindo.Net
             _jsonHelper = new JsonHelper();
         }
 
-        public async Task<Rank[]> GetRankViewsAsync(RankViewsPlatform platform, Size size)
+        public async Task<Rank[]> GetRankByViewsAsync(RankViewsPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -29,7 +29,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankViewerAsync(RankViewerPlatform platform, Size size)
+        public async Task<Rank[]> GetRankByViewersAsync(RankViewerPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -51,7 +51,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankSubGainAsync(RankAllPlatform platform, Size size)
+        public async Task<Rank[]> GetRankBySubGainAsync(RankAllPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -62,7 +62,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankLikesAsync(RankLikesPlatform platform, Size size)
+        public async Task<Rank[]> GetRankByLikesAsync(RankLikesPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -73,7 +73,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankPeakViewerAsync(RankViewerPlatform platform, Size size)
+        public async Task<Rank[]> GetRankByPeakViewersAsync(RankViewerPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -84,7 +84,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Rank[]> GetRankRetweetsAsync(RankRetweets platform, Size size)
+        public async Task<Rank[]> GetRankByRetweetsAsync(RankRetweets platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
@@ -111,7 +111,7 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Search[]> GetSearchAsync(string term)
+        public async Task<Search[]> SearchAsync(string term)
         {
             var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}search/smart/{term}");
             var apiData = await _jsonHelper.Deserialise<Search[]>(jsonAsStream);
@@ -193,11 +193,11 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<object> GetPostsAsync(PostsPlatform platform, string PlatformID)
+        public async Task<object> GetPostsAsync(PostsPlatform platform, string platformId)
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}posts/{requestPlatform}/{PlatformID}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}posts/{requestPlatform}/{platformId}");
             object apiData;
             switch (platform)
             {
@@ -240,9 +240,9 @@ namespace Nindo.Net
             return apiData;
         }
 
-        public async Task<Coupons> GetCouponsBySortAsync(string categorie)
+        public async Task<Coupons> GetCouponsBySortAsync(string category)
         {
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/by/{categorie}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}coupons/by/{category}");
             var apiData = await _jsonHelper.Deserialise<Coupons>(jsonAsStream);
 
             return apiData;

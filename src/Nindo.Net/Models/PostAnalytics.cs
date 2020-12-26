@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Nindo.Net.Models
 {
@@ -18,9 +17,9 @@ namespace Nindo.Net.Models
         public ulong AnalyticsType { get; set; }
 
         [JsonProperty("postID")]
-        public string PostID { get; set; }
+        public string PostId { get; set; }
 
         [JsonProperty("channelID")]
-        public string ChannelID { get; set; }
+        public string ChannelId { get; set; }
     }
 }

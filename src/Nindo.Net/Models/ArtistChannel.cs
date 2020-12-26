@@ -30,7 +30,7 @@ namespace Nindo.Net.Models
         public bool IsGerman { get; set; }
 
         [JsonProperty("ageInDB")]
-        public ulong AgeInDB { get; set; }
+        public ulong AgeInDb { get; set; }
 
         [JsonProperty("subscribers")]
         public ulong Subscribers { get; set; }
