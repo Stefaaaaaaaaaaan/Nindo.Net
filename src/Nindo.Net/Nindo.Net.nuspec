@@ -8,7 +8,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/AlexGipp/Nindo.Net</projectUrl>
-    <iconUrl>https://nindo.de/logo.png</iconUrl>
+    <icon>https://nindo.de/logo.png</icon>
     <description>$description$</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>$copyright$</copyright>
