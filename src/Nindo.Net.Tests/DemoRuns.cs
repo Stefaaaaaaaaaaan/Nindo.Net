@@ -273,7 +273,79 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetPosts(platform, userId);
+            var result = await client.GetPostsAsync(platform, userId);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task DemoRun_GetCouponAsync()
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetCouponsAsync();
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task DemoRun_GetCouponBrandsAsync()
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetCouponsBrandsAsync();
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task DemoRun_GetCouponBranchesAsync()
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetCouponBranchesAsync();
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData("Cosmetics%20&%20Beauty")]
+        [InlineData("Fashion")]
+        [InlineData("Sport")]
+        public async Task DemoRun_GetCouponsbySortAsync(string categorie)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetCouponsBySortAsync(categorie);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData("c3f24f319ffd9e82e803ac4b20f295ff")]
+        [InlineData("7b8d313719d705353b91a81738c450cc")]
+        [InlineData("d6555d5e63cb751f6c094ed2fe8f542a")]
+        [InlineData("03d9e19686a02b604b43fe181eaefac0")]
+        public async Task DemoRun_GetCouponsForBranchAsync(string id)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetCouponsForBranchAsync(id);
 
             //Assert
             Assert.NotNull(result);
