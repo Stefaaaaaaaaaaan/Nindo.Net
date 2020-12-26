@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logo.png"/>
+  <img src="docs/images/logo.png"  Height=350/>
   <p align="center">
   <a href="https://github.com/AlexGipp/Nindo.Net/actions?query=workflow%3A%22Build+%26+Test%22">
     <img src="https://github.com/AlexGipp/Nindo.Net/workflows/Build%20&%20Test/badge.svg" alt="Build status">
@@ -37,8 +37,24 @@ Or place this line in your `.csproj` & do a `dotnet restore`.
 
 ```cs
 //Initialise a NindoClient
-var client = new NindoClient();
+var client = new RanksClient();
 
 //Call a method to send a request
-var result = await client.GetRankByViewsAsync(RankViewerPlatform.Twitch,  Size.Big);
+var result = await client.GetViewsScoreboardAsync(RankViewerPlatform.Twitch, Size.Big);
 ```
+
+## 📚 Clients
+
+### All available clients.
+
+```cs
+var artistClient = new ArtistClient();
+var channelClient = new ChannelClient();
+var couponsClient = new CouponsClient();
+var feedbackClient = new FeedbackClient();
+var postsClient = new PostsClient();
+var ranksClient = new RanksClient();
+var searchClient = new SearchClient();
+var viralClient = new ViralClient();
+```
+

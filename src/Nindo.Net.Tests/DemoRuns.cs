@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Nindo.Net.Clients;
 using Nindo.Net.Models.Enums;
 using Xunit;
 
@@ -11,13 +12,13 @@ namespace Nindo.Net.Tests
         [InlineData(RankViewsPlatform.TikTok, Size.Big)]
         [InlineData(RankViewsPlatform.Youtube, Size.Small)]
         [InlineData(RankViewsPlatform.TikTok, Size.Small)]
-        public async Task DemoRun_GetRankViewsAsync(RankViewsPlatform platform, Size size)
+        public async Task DemoRun_GetViewsScoreboardAsync(RankViewsPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankByViewsAsync(platform, size);
+            var result = await client.GetViewsScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -26,13 +27,13 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData(RankViewerPlatform.Twitch, Size.Big)]
         [InlineData(RankViewerPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetRankViewerAsync(RankViewerPlatform platform, Size size)
+        public async Task DemoRun_GetViewersScoreboardAsync(RankViewerPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankByViewersAsync(platform, size);
+            var result = await client.GetViewersScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -47,13 +48,13 @@ namespace Nindo.Net.Tests
         [InlineData(RankAllPlatform.Instagram, Size.Small)]
         [InlineData(RankAllPlatform.TikTok, Size.Small)]
         [InlineData(RankAllPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetRankAsync(RankAllPlatform platform, Size size)
+        public async Task DemoRun_GetScoreboardAsync(RankAllPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankAsync(platform, size);
+            var result = await client.GetScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -68,13 +69,13 @@ namespace Nindo.Net.Tests
         [InlineData(RankAllPlatform.Instagram, Size.Small)]
         [InlineData(RankAllPlatform.TikTok, Size.Small)]
         [InlineData(RankAllPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetRankSubGainAsync(RankAllPlatform platform, Size size)
+        public async Task DemoRun_GetSubGainScoreboardAsync(RankAllPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankBySubGainAsync(platform, size);
+            var result = await client.GetSubGainScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -89,13 +90,13 @@ namespace Nindo.Net.Tests
         [InlineData(RankLikesPlatform.Instagram, Size.Small)]
         [InlineData(RankLikesPlatform.TikTok, Size.Small)]
         [InlineData(RankLikesPlatform.Twitter, Size.Small)]
-        public async Task DemoRun_GetRankLikesAsync(RankLikesPlatform platform, Size size)
+        public async Task DemoRun_GetLikesScoreboardAsync(RankLikesPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankByLikesAsync(platform, size);
+            var result = await client.GetLikesScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -104,13 +105,13 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData(RankViewerPlatform.Twitch, Size.Big)]
         [InlineData(RankViewerPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetRankPeakViewerAsync(RankViewerPlatform platform, Size size)
+        public async Task DemoRun_GetPeakViewersScoreboardAsync(RankViewerPlatform platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankByPeakViewersAsync(platform, size);
+            var result = await client.GetPeakViewersScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -119,13 +120,13 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData(RankRetweets.Twitter, Size.Big)]
         [InlineData(RankRetweets.Twitter, Size.Small)]
-        public async Task DemoRun_GetRankRetweetsAsync(RankRetweets platform, Size size)
+        public async Task DemoRun_GetRetweetsScoreboardAsync(RankRetweets platform, Size size)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetRankByRetweetsAsync(platform, size);
+            var result = await client.GetRetweetsScoreboardAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -135,7 +136,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetPastMilestonesAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
             var result = await client.GetPastMilestonesAsync();
@@ -148,7 +149,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetMilestonesAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            RanksClient client = new RanksClient();
 
             //Act
             var result = await client.GetMilestonesAsync();
@@ -160,26 +161,26 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData("montanablack")]
         [InlineData("Alex")]
-        public async Task DemoRun_GetSearchAsync(string term)
+        public async Task DemoRun_SearchUserAsync(string term)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            SearchClient client = new SearchClient();
 
             //Act
-            var result = await client.SearchAsync(term);
+            var result = await client.SearchUserAsync(term);
 
             //Assert
             Assert.NotNull(result);
         }
 
         [Fact]
-        public async Task DemoRun_GetViralAsync()
+        public async Task DemoRun_GetViralsAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            ViralClient client = new ViralClient();
 
             //Act
-            var result = await client.GetViralAsync();
+            var result = await client.GetViralsAsync();
 
             //Assert
             Assert.NotNull(result);
@@ -199,7 +200,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetChannelInformationAsync(RankAllPlatform platform, string userId)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            ChannelClient client = new ChannelClient();
 
             //Act
             var result = await client.GetChannelInformationAsync(platform, userId);
@@ -219,13 +220,13 @@ namespace Nindo.Net.Tests
         [InlineData("d2ebc08a18eda92c8a809c8490ba7b55")]
         [InlineData("21a3a3969aa81e318cd1cc8a549df55e")]
         [InlineData("7a6db13d49fe85ef8d13d4c329317c92")]
-        public async Task DemoRun_GetArtistAsync(string userId)
+        public async Task DemoRun_GetArtistInformationAsync(string userId)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            ArtistClient client = new ArtistClient();
 
             //Act
-            var result = await client.GetArtistAsync(userId);
+            var result = await client.GetArtistInformationAsync(userId);
 
             //Assert
             Assert.NotNull(result);
@@ -237,19 +238,18 @@ namespace Nindo.Net.Tests
         [InlineData(RankAllPlatform.Instagram, "09594e8d993079fe551a2aa8aacf1fe1")]
         [InlineData(RankAllPlatform.Twitch, "f87d9934c783506a1595e675de0996ad")]
         [InlineData(RankAllPlatform.Twitter, "f31bfbddd8b929e5fd232b5061d0a83b")]
-
         [InlineData(RankAllPlatform.Youtube, "5383c16fc1471ee057f3e2bf268a43cc")]
         [InlineData(RankAllPlatform.TikTok, "e09249eceec86d098704ad6982ce2c1c")]
         [InlineData(RankAllPlatform.Instagram, "185366e42ce08b1026160fec85dcbce1")]
         [InlineData(RankAllPlatform.Twitch, "cbfa57bcdc0130185b93f8e078c0d104")]
         [InlineData(RankAllPlatform.Twitter, "a70a94eb7b5e2a40cc848cf6ebded7ec")]
-        public async Task DemoRun_GetChannelHystoricAsync(RankAllPlatform platform, string userId)
+        public async Task DemoRun_GetChannelHistoryAsync(RankAllPlatform platform, string userId)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            ChannelClient client = new ChannelClient();
 
             //Act
-            var result = await client.GetHistoricChannelAsync(platform, userId);
+            var result = await client.GetChannelHistoryAsync(platform, userId);
 
             //Assert
             Assert.NotNull(result);
@@ -259,21 +259,19 @@ namespace Nindo.Net.Tests
         [InlineData(PostsPlatform.TikTok, "1e9c386cea9af5ea3e1e8f9b18abdb20")]
         [InlineData(PostsPlatform.Instagram, "09594e8d993079fe551a2aa8aacf1fe1")]
         [InlineData(PostsPlatform.Twitter, "f31bfbddd8b929e5fd232b5061d0a83b")]
-
         [InlineData(PostsPlatform.TikTok, "f4a99c87beb995b671952fa98bc96e7e")]
         [InlineData(PostsPlatform.Instagram, "45a1eff68a0b6884d389dbee4d245ce3")]
         [InlineData(PostsPlatform.Twitter, "4c7ba12d66d4190555664ae74a279308")]
-
         [InlineData(PostsPlatform.TikTok, "5386053644dea65b812e936f2e276434")]
         [InlineData(PostsPlatform.Instagram, "fb1f3d1038140ff87be4b3a0cdd173d5")]
         [InlineData(PostsPlatform.Twitter, "39580de32b18ddf0cc6ee12de8607db4")]
-        public async Task DemoRun_GetPostsAsync(PostsPlatform platform, string userId)
+        public async Task DemoRun_GetUserPostsAsync(PostsPlatform platform, string userId)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            PostsClient client = new PostsClient();
 
             //Act
-            var result = await client.GetPostsAsync(platform, userId);
+            var result = await client.GetUserPostsAsync(platform, userId);
 
             //Assert
             Assert.NotNull(result);
@@ -283,7 +281,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetCouponAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            CouponsClient client = new CouponsClient();
 
             //Act
             var result = await client.GetCouponsAsync();
@@ -296,7 +294,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetCouponBrandsAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            CouponsClient client = new CouponsClient();
 
             //Act
             var result = await client.GetCouponsBrandsAsync();
@@ -309,7 +307,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetCouponBranchesAsync()
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            CouponsClient client = new CouponsClient();
 
             //Act
             var result = await client.GetCouponBranchesAsync();
@@ -322,13 +320,13 @@ namespace Nindo.Net.Tests
         [InlineData("Cosmetics%20&%20Beauty")]
         [InlineData("Fashion")]
         [InlineData("Sport")]
-        public async Task DemoRun_GetCouponsbySortAsync(string categorie)
+        public async Task DemoRun_GetCouponsByCategoryAsync(string categorie)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            CouponsClient client = new CouponsClient();
 
             //Act
-            var result = await client.GetCouponsBySortAsync(categorie);
+            var result = await client.GetCouponsByCategoryAsync(categorie);
 
             //Assert
             Assert.NotNull(result);
@@ -342,7 +340,7 @@ namespace Nindo.Net.Tests
         public async Task DemoRun_GetCouponsForBranchAsync(string id)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            CouponsClient client = new CouponsClient();
 
             //Act
             var result = await client.GetCouponsByBranchAsync(id);
@@ -351,18 +349,18 @@ namespace Nindo.Net.Tests
             Assert.NotNull(result);
         }
 
-        [Theory]
+        /*[Theory]
         [InlineData("Trinkdose", "TestName", "21AB$", "20%")]
         public async Task DemoRun_SubmitCouponAsync(string brand, string artistName, string code, string discount)
         {
             //Arrange
-            NindoClient client = new NindoClient();
+            FeedbackClient client = new FeedbackClient();
 
             //Act
             var result = await client.SubmitCouponAsync(brand, artistName, code, discount);
 
             //Assert
             Assert.Equal("OK", result.ReasonPhrase);
-        }
+        }*/
     }
 }
