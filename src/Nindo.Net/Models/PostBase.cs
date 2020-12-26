@@ -6,7 +6,7 @@ namespace Nindo.Net.Models
     class PostBase
     {
         [JsonProperty("postID")]
-        public string PostID { get; set; }
+        public string PostId { get; set; }
 
         [JsonProperty("content")]
         public string Content { get; set; }

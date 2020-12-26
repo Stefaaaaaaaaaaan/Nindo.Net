@@ -17,7 +17,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result =await client.GetRankViewsAsync(platform, size);
+            var result = await client.GetRankByViewsAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -32,7 +32,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRankViewerAsync(platform, size);
+            var result = await client.GetRankByViewersAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -74,7 +74,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRankSubGainAsync(platform, size);
+            var result = await client.GetRankBySubGainAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -95,7 +95,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRankLikesAsync(platform, size);
+            var result = await client.GetRankByLikesAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -110,7 +110,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRankPeakViewerAsync(platform, size);
+            var result = await client.GetRankByPeakViewersAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -125,7 +125,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRankRetweetsAsync(platform, size);
+            var result = await client.GetRankByRetweetsAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
@@ -166,7 +166,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetSearchAsync(term);
+            var result = await client.SearchAsync(term);
 
             //Assert
             Assert.NotNull(result);
