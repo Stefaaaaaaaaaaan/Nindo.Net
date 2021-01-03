@@ -10,7 +10,7 @@ namespace Nindo.Net.Clients
     {
 
         private readonly JsonHelper _jsonHelper;
-        private readonly string _baseUrl = "https://api.nindo.de/channel/";
+        private readonly string _baseUrl = "https://api.nindo.de/channel";
 
         public ChannelClient()
         {
@@ -21,7 +21,7 @@ namespace Nindo.Net.Clients
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}{requestPlatform}/{userId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/{requestPlatform}/{userId}");
             object apiData;
             switch (platform)
             {
@@ -50,7 +50,7 @@ namespace Nindo.Net.Clients
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}historic/{requestPlatform}/{userId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/historic/{requestPlatform}/{userId}");
             object apiData;
             switch (platform)
             {

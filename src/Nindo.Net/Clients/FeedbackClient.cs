@@ -8,7 +8,7 @@ namespace Nindo.Net.Clients
     public class FeedbackClient
     {
         private readonly JsonHelper _jsonHelper;
-        private readonly string _baseUrl = "https://api.nindo.de/feedback/";
+        private readonly string _baseUrl = "https://api.nindo.de/feedback";
 
         public FeedbackClient()
         {
@@ -25,7 +25,7 @@ namespace Nindo.Net.Clients
                 new KeyValuePair<string, string>("current", "0"),
                 new KeyValuePair<string, string>("type", "newCoupon")
 
-            }); var responseMessage = await ApiProcessor.PostAsync($"{_baseUrl}", content);
+            }); var responseMessage = await ApiProcessor.PostAsync($"{_baseUrl}/", content);
 
             return responseMessage;
         }
