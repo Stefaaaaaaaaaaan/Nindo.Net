@@ -39,7 +39,7 @@ namespace Nindo.Net.Models
         public string RankSubGain { get; set; }
 
         [JsonProperty("rank")]
-        public int Rank { get; set; }
+        public int? Rank { get; set; }
 
         [JsonProperty("lastPost")]
         public string LastPost { get; set; }

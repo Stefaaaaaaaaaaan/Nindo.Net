@@ -132,6 +132,29 @@ namespace Nindo.Net.Tests
             Assert.NotNull(result);
         }
 
+        [Theory]
+        [InlineData(RankAllPlatform.Youtube, Size.Big)]
+        [InlineData(RankAllPlatform.Instagram, Size.Big)]
+        [InlineData(RankAllPlatform.TikTok, Size.Big)]
+        [InlineData(RankAllPlatform.Twitch, Size.Big)]
+        [InlineData(RankAllPlatform.Twitter, Size.Big)]
+        [InlineData(RankAllPlatform.Youtube, Size.Small)]
+        [InlineData(RankAllPlatform.Instagram, Size.Small)]
+        [InlineData(RankAllPlatform.TikTok, Size.Small)]
+        [InlineData(RankAllPlatform.Twitch, Size.Small)]
+        [InlineData(RankAllPlatform.Twitter, Size.Small)]
+        public async Task DemoRun_GetSubscriberAsync(RankAllPlatform platform, Size size)
+        {
+            //Arrange
+            RanksClient client = new RanksClient();
+
+            //Act
+            var result = await client.GetSubscriberAsync(platform, size);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
         [Fact]
         public async Task DemoRun_GetPastMilestonesAsync()
         {
@@ -191,7 +214,7 @@ namespace Nindo.Net.Tests
         [InlineData(RankAllPlatform.Instagram, "185366e42ce08b1026160fec85dcbce1")]
         [InlineData(RankAllPlatform.Twitter, "39580de32b18ddf0cc6ee12de8607db4")]
         [InlineData(RankAllPlatform.Twitch, "a4f19eb4e17bc77edd1e8c187a2cc356")]
-        [InlineData(RankAllPlatform.TikTok, "eabc7d8f1829479c489ef5cfc7aa79a8")]
+        [InlineData(RankAllPlatform.TikTok, "04f783e8e02ef1a5bb8f40e5e3c15a55")]
         [InlineData(RankAllPlatform.Youtube, "f8c1e101fc05d6da986a14735c8b9fea")]
         [InlineData(RankAllPlatform.Instagram, "445b38b9c054895c29152142aeabc488")]
         [InlineData(RankAllPlatform.Twitter, "39af0e94ee28126f1c80ff19e5c05839")]
