@@ -32,7 +32,7 @@ namespace Nindo.Net.Models
         public double AvgEngagementFive { get; set; }
 
         [JsonProperty("rankLikes")]
-        public ulong RankLikes { get; set; }
+        public ulong? RankLikes { get; set; }
 
         [JsonProperty("rankComments")]
         public string RankComments { get; set; }
@@ -41,6 +41,6 @@ namespace Nindo.Net.Models
         public string RankShares { get; set; }
 
         [JsonProperty("rankViews")]
-        public ulong RankViews { get; set; }
+        public ulong? RankViews { get; set; }
     }
 }

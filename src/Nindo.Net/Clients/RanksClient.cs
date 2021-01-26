@@ -8,7 +8,7 @@ namespace Nindo.Net.Clients
     public class RanksClient
     {
         private readonly JsonHelper _jsonHelper;
-        private readonly string _baseUrl = "https://api.nindo.de/ranks/";
+        private readonly string _baseUrl = "https://api.nindo.de/ranks";
 
         public RanksClient()
         {
@@ -21,7 +21,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankViews/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankViews/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -32,7 +32,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankViewer/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankViewer/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -43,7 +43,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rank/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rank/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -54,7 +54,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankSubGain/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankSubGain/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -65,7 +65,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankLikes/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankLikes/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -76,7 +76,7 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankPeakViewer/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankPeakViewer/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
 
             return apiData;
@@ -87,15 +87,26 @@ namespace Nindo.Net.Clients
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}charts/{requestPlatform}/rankRetweets/{requestSize}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/rankRetweets/{requestSize}");
             var apiData = await _jsonHelper.Deserialise<Rank[]>(jsonAsStream);
+
+            return apiData;
+        }
+
+        public async Task<Subscribers[]> GetSubscribersAsync(RankAllPlatform platform, Size size)
+        {
+            var requestPlatform = platform.ToApiString();
+            var requestSize = size.ToApiString();
+
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/subscribers/{requestSize}");
+            var apiData = await _jsonHelper.Deserialise<Subscribers[]>(jsonAsStream);
 
             return apiData;
         }
 
         public async Task<Milestone[]> GetPastMilestonesAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}pastMilestones");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/pastMilestones");
             var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
@@ -103,7 +114,7 @@ namespace Nindo.Net.Clients
 
         public async Task<Milestone[]> GetMilestonesAsync()
         {
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}milestones");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/milestones");
             var apiData = await _jsonHelper.Deserialise<Milestone[]>(jsonAsStream);
 
             return apiData;
