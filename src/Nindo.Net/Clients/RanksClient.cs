@@ -93,7 +93,7 @@ namespace Nindo.Net.Clients
             return apiData;
         }
 
-        public async Task<Subscribers[]> GetSubscriberAsync(RankAllPlatform platform, Size size)
+        public async Task<Subscribers[]> GetSubscribersAsync(RankAllPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();

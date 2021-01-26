@@ -143,13 +143,13 @@ namespace Nindo.Net.Tests
         [InlineData(RankAllPlatform.TikTok, Size.Small)]
         [InlineData(RankAllPlatform.Twitch, Size.Small)]
         [InlineData(RankAllPlatform.Twitter, Size.Small)]
-        public async Task DemoRun_GetSubscriberAsync(RankAllPlatform platform, Size size)
+        public async Task DemoRun_GetSubscribersAsync(RankAllPlatform platform, Size size)
         {
             //Arrange
             RanksClient client = new RanksClient();
 
             //Act
-            var result = await client.GetSubscriberAsync(platform, size);
+            var result = await client.GetSubscribersAsync(platform, size);
 
             //Assert
             Assert.NotNull(result);
