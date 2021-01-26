@@ -33,13 +33,13 @@ namespace Nindo.Net.Models
         public ulong Subscribers { get; set; }
 
         [JsonProperty("subGain30")]
-        public long SubGainThirty { get; set; }
+        public long? SubGainThirty { get; set; }
 
         [JsonProperty("rankSubGain")]
         public string RankSubGain { get; set; }
 
         [JsonProperty("rank")]
-        public int Rank { get; set; }
+        public int? Rank { get; set; }
 
         [JsonProperty("lastPost")]
         public string LastPost { get; set; }

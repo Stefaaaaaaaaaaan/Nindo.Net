@@ -9,7 +9,7 @@ namespace Nindo.Net.Clients
     public class PostsClient
     {
         private readonly JsonHelper _jsonHelper;
-        private readonly string _baseUrl = "https://api.nindo.de/posts/";
+        private readonly string _baseUrl = "https://api.nindo.de/posts";
 
         public PostsClient()
         {
@@ -20,7 +20,7 @@ namespace Nindo.Net.Clients
         {
             var requestPlatform = platform.ToApiString();
 
-            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}{requestPlatform}/{platformId}");
+            var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/{requestPlatform}/{platformId}");
             object apiData;
             switch (platform)
             {

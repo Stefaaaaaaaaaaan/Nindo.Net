@@ -132,6 +132,29 @@ namespace Nindo.Net.Tests
             Assert.NotNull(result);
         }
 
+        [Theory]
+        [InlineData(RankAllPlatform.Youtube, Size.Big)]
+        [InlineData(RankAllPlatform.Instagram, Size.Big)]
+        [InlineData(RankAllPlatform.TikTok, Size.Big)]
+        [InlineData(RankAllPlatform.Twitch, Size.Big)]
+        [InlineData(RankAllPlatform.Twitter, Size.Big)]
+        [InlineData(RankAllPlatform.Youtube, Size.Small)]
+        [InlineData(RankAllPlatform.Instagram, Size.Small)]
+        [InlineData(RankAllPlatform.TikTok, Size.Small)]
+        [InlineData(RankAllPlatform.Twitch, Size.Small)]
+        [InlineData(RankAllPlatform.Twitter, Size.Small)]
+        public async Task DemoRun_GetSubscribersAsync(RankAllPlatform platform, Size size)
+        {
+            //Arrange
+            RanksClient client = new RanksClient();
+
+            //Act
+            var result = await client.GetSubscribersAsync(platform, size);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
         [Fact]
         public async Task DemoRun_GetPastMilestonesAsync()
         {
@@ -189,21 +212,21 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData(RankAllPlatform.Youtube, "bd3c3e4b2794394e62d0ba76d0ee0c43")]
         [InlineData(RankAllPlatform.Instagram, "185366e42ce08b1026160fec85dcbce1")]
-        [InlineData(RankAllPlatform.TikTok, "1e9c386cea9af5ea3e1e8f9b18abdb20")]
         [InlineData(RankAllPlatform.Twitter, "39580de32b18ddf0cc6ee12de8607db4")]
         [InlineData(RankAllPlatform.Twitch, "a4f19eb4e17bc77edd1e8c187a2cc356")]
+        [InlineData(RankAllPlatform.TikTok, "04f783e8e02ef1a5bb8f40e5e3c15a55")]
         [InlineData(RankAllPlatform.Youtube, "f8c1e101fc05d6da986a14735c8b9fea")]
         [InlineData(RankAllPlatform.Instagram, "445b38b9c054895c29152142aeabc488")]
-        [InlineData(RankAllPlatform.TikTok, "a6e66cc4291aff816168df1044ce56ea")]
         [InlineData(RankAllPlatform.Twitter, "39af0e94ee28126f1c80ff19e5c05839")]
         [InlineData(RankAllPlatform.Twitch, "02bd36db184fddfd9c4bfc6afdbbeb3b")]
-        public async Task DemoRun_GetChannelInformationAsync(RankAllPlatform platform, string userId)
+        [InlineData(RankAllPlatform.TikTok, "ec86130693cecb1d14b54b7e35c43495")]
+        public async Task DemoRun_GetChannelInformationAsync(RankAllPlatform platform, string Id)
         {
             //Arrange
             ChannelClient client = new ChannelClient();
 
             //Act
-            var result = await client.GetChannelInformationAsync(platform, userId);
+            var result = await client.GetChannelInformationAsync(platform, Id);
 
             //Assert
             Assert.NotNull(result);
@@ -285,6 +308,22 @@ namespace Nindo.Net.Tests
 
             //Act
             var result = await client.GetCouponsAsync();
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        public async Task DemoRun_GetGetCouponsWithOffsetAsync(int i)
+        {
+            //Arrange
+            CouponsClient client = new CouponsClient();
+
+            //Act
+            var result = await client.GetCouponsWithOffsetAsync(i);
 
             //Assert
             Assert.NotNull(result);
