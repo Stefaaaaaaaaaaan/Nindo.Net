@@ -93,13 +93,13 @@ namespace Nindo.Net.Clients
             return apiData;
         }
 
-        public async Task<Subscribers[]> GetSubscribersAsync(RankAllPlatform platform, Size size)
+        public async Task<Subscriber[]> GetSubscribersAsync(RankAllPlatform platform, Size size)
         {
             var requestPlatform = platform.ToApiString();
             var requestSize = size.ToApiString();
 
             var jsonAsStream = await ApiProcessor.GetAsync($"{_baseUrl}/charts/{requestPlatform}/subscribers/{requestSize}");
-            var apiData = await _jsonHelper.Deserialise<Subscribers[]>(jsonAsStream);
+            var apiData = await _jsonHelper.Deserialise<Subscriber[]>(jsonAsStream);
 
             return apiData;
         }
