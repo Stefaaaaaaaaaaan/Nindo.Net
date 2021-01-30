@@ -24,11 +24,11 @@ namespace Nindo.Net.Helpers
             };
         }
 
-        internal static string ToApiString(this RankRetweets platform)
+        internal static string ToApiString(this RankRetweetsPlatform platform)
         {
             return platform switch
             {
-                RankRetweets.Twitter => "twitter",
+                RankRetweetsPlatform.Twitter => "twitter",
                 _ => throw new NotSupportedException("Invalid platform type.")
             };
         }

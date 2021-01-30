@@ -7,6 +7,7 @@ namespace Nindo.Net.Tests
 {
     public class RankViewTests
     {
+        /*
         [Theory]
         [InlineData(RankViewsPlatform.Youtube, Size.Big)]
         [InlineData(RankViewsPlatform.TikTok, Size.Big)]
@@ -118,9 +119,9 @@ namespace Nindo.Net.Tests
         }
 
         [Theory]
-        [InlineData(RankRetweets.Twitter, Size.Big)]
-        [InlineData(RankRetweets.Twitter, Size.Small)]
-        public async Task DemoRun_GetRetweetsScoreboardAsync(RankRetweets platform, Size size)
+        [InlineData(RankRetweetsPlatform.Twitter, Size.Big)]
+        [InlineData(RankRetweetsPlatform.Twitter, Size.Small)]
+        public async Task DemoRun_GetRetweetsScoreboardAsync(RankRetweetsPlatform platform, Size size)
         {
             //Arrange
             RanksClient client = new RanksClient();
@@ -180,6 +181,7 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+        
 
         [Theory]
         [InlineData("montanablack")]
@@ -195,6 +197,7 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+        
 
         [Fact]
         public async Task DemoRun_GetViralsAsync()
@@ -208,6 +211,7 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
+        */
 
         [Theory]
         [InlineData(RankAllPlatform.Youtube, "bd3c3e4b2794394e62d0ba76d0ee0c43")]
@@ -231,7 +235,7 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
-
+        /*
         [Theory]
         [InlineData("a8f91412e41308d8ee6a30b3daf963bc")]
         [InlineData("0c57f0ef628f958a06cb2f19af8c269d")]
@@ -253,7 +257,7 @@ namespace Nindo.Net.Tests
 
             //Assert
             Assert.NotNull(result);
-        }
+        }*/
 
         [Theory]
         [InlineData(RankAllPlatform.Youtube, "f0f5e45ab17540c5d1164dff24503b1a")]
@@ -299,7 +303,8 @@ namespace Nindo.Net.Tests
             //Assert
             Assert.NotNull(result);
         }
-
+        
+        /*
         [Fact]
         public async Task DemoRun_GetCouponAsync()
         {
@@ -388,7 +393,7 @@ namespace Nindo.Net.Tests
             Assert.NotNull(result);
         }
 
-        /*[Theory]
+        [Theory]
         [InlineData("Trinkdose", "TestName", "21AB$", "20%")]
         public async Task DemoRun_SubmitCouponAsync(string brand, string artistName, string code, string discount)
         {
