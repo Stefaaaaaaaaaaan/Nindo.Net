@@ -3,7 +3,7 @@ using Nindo.Net.Models;
 using Nindo.Net.Models.Enums;
 using Refit;
 
-namespace Nindo.Net
+namespace Nindo.Net.Interfaces
 {
     public interface IRankClient
     {

@@ -2,7 +2,7 @@
 using Nindo.Net.Models;
 using Refit;
 
-namespace Nindo.Net
+namespace Nindo.Net.Interfaces
 {
     public interface ICouponsClient
     {
