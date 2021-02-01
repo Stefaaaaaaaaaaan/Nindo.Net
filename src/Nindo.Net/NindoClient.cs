@@ -79,7 +79,7 @@ namespace Nindo.Net
             return _service.GetTwitterChannelInformationAsync(userId);
         }
 
-        public Task<YoutubeChannel> GetYouTubeChannelHistoryAsync(string userId)
+        public Task<YoutubeChannel[]> GetYouTubeChannelHistoryAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
@@ -87,7 +87,7 @@ namespace Nindo.Net
             return _service.GetYouTubeChannelHistoryAsync(userId);
         }
 
-        public Task<InstagramChannel> GetInstagramChannelHistoryAsync(string userId)
+        public Task<InstagramChannel[]> GetInstagramChannelHistoryAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
@@ -95,7 +95,7 @@ namespace Nindo.Net
             return _service.GetInstagramChannelHistoryAsync(userId);
         }
 
-        public Task<TiktokChannel> GetTikTokChannelHistoryAsync(string userId)
+        public Task<TiktokChannel[]> GetTikTokChannelHistoryAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
@@ -103,7 +103,7 @@ namespace Nindo.Net
             return _service.GetTikTokChannelHistoryAsync(userId);
         }
 
-        public Task<TwitchChannel> GetTwitchChannelHistoryAsync(string userId)
+        public Task<TwitchChannel[]> GetTwitchChannelHistoryAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
@@ -111,7 +111,7 @@ namespace Nindo.Net
             return _service.GetTwitchChannelHistoryAsync(userId);
         }
 
-        public Task<TwitterChannel> GetTwitterChannelHistoryAsync(string userId)
+        public Task<TwitterChannel[]> GetTwitterChannelHistoryAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
