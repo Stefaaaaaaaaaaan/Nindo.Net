@@ -33,7 +33,7 @@ namespace Nindo.Net
 
         public Task<Artist> GetArtistInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetArtistInformationAsync(userId);
@@ -41,7 +41,7 @@ namespace Nindo.Net
 
         public Task<YoutubeChannel> GetYouTubeChannelInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetYouTubeChannelInformationAsync(userId);
@@ -49,7 +49,7 @@ namespace Nindo.Net
 
         public Task<InstagramChannel> GetInstagramChannelInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetInstagramChannelInformationAsync(userId);
@@ -57,7 +57,7 @@ namespace Nindo.Net
 
         public Task<TiktokChannel> GetTikTokChannelInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTikTokChannelInformationAsync(userId);
@@ -65,7 +65,7 @@ namespace Nindo.Net
 
         public Task<TwitchChannel> GetTwitchChannelInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTwitchChannelInformationAsync(userId);
@@ -73,7 +73,7 @@ namespace Nindo.Net
 
         public Task<TwitterChannel> GetTwitterChannelInformationAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTwitterChannelInformationAsync(userId);
@@ -81,7 +81,7 @@ namespace Nindo.Net
 
         public Task<YoutubeChannel> GetYouTubeChannelHistoryAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetYouTubeChannelHistoryAsync(userId);
@@ -89,7 +89,7 @@ namespace Nindo.Net
 
         public Task<InstagramChannel> GetInstagramChannelHistoryAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetInstagramChannelHistoryAsync(userId);
@@ -97,7 +97,7 @@ namespace Nindo.Net
 
         public Task<TiktokChannel> GetTikTokChannelHistoryAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTikTokChannelHistoryAsync(userId);
@@ -105,7 +105,7 @@ namespace Nindo.Net
 
         public Task<TwitchChannel> GetTwitchChannelHistoryAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTwitchChannelHistoryAsync(userId);
@@ -113,7 +113,7 @@ namespace Nindo.Net
 
         public Task<TwitterChannel> GetTwitterChannelHistoryAsync(string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetTwitterChannelHistoryAsync(userId);
@@ -126,7 +126,7 @@ namespace Nindo.Net
 
         public Task<Search[]> SearchUserAsync(string term)
         {
-            if (term is null)
+            if (string.IsNullOrEmpty(term))
                 throw new ArgumentNullException(nameof(term));
 
             return _service.SearchUserAsync(term);
@@ -185,7 +185,7 @@ namespace Nindo.Net
 
         public Task<PostBase[]> GetUserPostsAsync(PostsPlatform platform, string userId)
         {
-            if (userId is null)
+            if (string.IsNullOrEmpty(userId))
                 throw new ArgumentNullException(nameof(userId));
 
             return _service.GetUserPostsAsync(platform, userId);
@@ -213,7 +213,7 @@ namespace Nindo.Net
 
         public Task<Coupons> GetCouponsByCategoryAsync(string category)
         {
-            if (category is null)
+            if (string.IsNullOrEmpty(category))
                 throw new ArgumentNullException(nameof(category));
 
             return _service.GetCouponsByCategoryAsync(category);
@@ -221,11 +221,10 @@ namespace Nindo.Net
 
         public Task<Coupons> GetCouponsByBranchAsync(string branch)
         {
-            if (branch is null)
+            if (string.IsNullOrEmpty(branch))
                 throw new ArgumentNullException(nameof(branch));
 
             return _service.GetCouponsByBranchAsync(branch);
-
         }
     }
 }
