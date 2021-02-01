@@ -33,19 +33,19 @@ namespace Nindo.Net
 
 
         [Get("/channel/historic/youtube/{userId}")]
-        Task<YoutubeChannel> GetYouTubeChannelHistoryAsync(string userId);
+        Task<YoutubeChannel[]> GetYouTubeChannelHistoryAsync(string userId);
 
         [Get("/channel/historic/instagram/{userId}")]
-        Task<InstagramChannel> GetInstagramChannelHistoryAsync(string userId);
+        Task<InstagramChannel[]> GetInstagramChannelHistoryAsync(string userId);
 
         [Get("/channel/historic/tiktok/{userId}")]
-        Task<TiktokChannel> GetTikTokChannelHistoryAsync(string userId);
+        Task<TiktokChannel[]> GetTikTokChannelHistoryAsync(string userId);
 
         [Get("/channel/historic/twitch/{userId}")]
-        Task<TwitchChannel> GetTwitchChannelHistoryAsync(string userId);
+        Task<TwitchChannel[]> GetTwitchChannelHistoryAsync(string userId);
 
         [Get("/channel/historic/twitter/{userId}")]
-        Task<TwitterChannel> GetTwitterChannelHistoryAsync(string userId);
+        Task<TwitterChannel[]> GetTwitterChannelHistoryAsync(string userId);
 
         #endregion
 
