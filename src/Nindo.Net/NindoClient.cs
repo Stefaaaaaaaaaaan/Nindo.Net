@@ -138,9 +138,9 @@ namespace Nindo.Net
             return _service.GetViewsScoreboardAsync(platform, size);
         }
 
-        public Task<Rank[]> GetViewersScoreboardAsync(RankViewerPlatform platform, Size size)
+        public Task<Rank[]> GetViewersScoreboardAsync(Size size)
         {
-            return _service.GetViewersScoreboardAsync(platform, size);
+            return _service.GetViewersScoreboardAsync(size);
         }
 
         public Task<Rank[]> GetScoreboardAsync(RankAllPlatform platform, Size size)
@@ -158,14 +158,14 @@ namespace Nindo.Net
             return _service.GetLikesScoreboardAsync(platform, size);
         }
 
-        public Task<Rank[]> GetPeakViewersScoreboardAsync(RankViewerPlatform platform, Size size)
+        public Task<Rank[]> GetPeakViewersScoreboardAsync(Size size)
         {
-            return _service.GetPeakViewersScoreboardAsync(platform, size);
+            return _service.GetPeakViewersScoreboardAsync(size);
         }
 
-        public Task<Rank[]> GetRetweetsScoreboardAsync(RankRetweetsPlatform platform, Size size)
+        public Task<Rank[]> GetRetweetsScoreboardAsync(Size size)
         {
-            return _service.GetRetweetsScoreboardAsync(platform, size);
+            return _service.GetRetweetsScoreboardAsync(size);
         }
 
         public Task<Subscriber[]> GetSubscribersAsync(RankAllPlatform platform, Size size)
