@@ -68,8 +68,8 @@ namespace Nindo.Net
         [Get("/ranks/charts/{platform}/rankViews/{size}")]
         Task<Rank[]> GetViewsScoreboardAsync(RankViewsPlatform platform, Size size);
 
-        [Get("/ranks/charts/{platform}/rankViewer/{size}")]
-        Task<Rank[]> GetViewersScoreboardAsync(RankViewerPlatform platform, Size size);
+        [Get("/ranks/charts/twitch/rankViewer/{size}")]
+        Task<Rank[]> GetViewersScoreboardAsync(Size size);
 
         [Get("/ranks/charts/{platform}/rank/{size}")]
         Task<Rank[]> GetScoreboardAsync(RankAllPlatform platform, Size size);
@@ -80,11 +80,11 @@ namespace Nindo.Net
         [Get("/ranks/charts/{platform}/rankLikes/{size}")]
         Task<Rank[]> GetLikesScoreboardAsync(RankLikesPlatform platform, Size size);
 
-        [Get("/ranks/charts/{platform}/rankPeakViewer/{size}")]
-        Task<Rank[]> GetPeakViewersScoreboardAsync(RankViewerPlatform platform, Size size);
+        [Get("/ranks/charts/twitch/rankPeakViewer/{size}")]
+        Task<Rank[]> GetPeakViewersScoreboardAsync(Size size);
 
-        [Get("/ranks/charts/{platform}/rankRetweets/{size}")]
-        Task<Rank[]> GetRetweetsScoreboardAsync(RankRetweetsPlatform platform, Size size);
+        [Get("/ranks/charts/twitter/rankRetweets/{size}")]
+        Task<Rank[]> GetRetweetsScoreboardAsync(Size size);
 
         [Get("/ranks/charts/{platform}/subscribers/{size}")]
         Task<Subscriber[]> GetSubscribersAsync(RankAllPlatform platform, Size size);

@@ -226,15 +226,15 @@ namespace Nindo.Net.Tests
         }
 
         [Theory]
-        [InlineData(RankViewerPlatform.Twitch, Size.Big)]
-        [InlineData(RankViewerPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetViewersScoreboardAsync(RankViewerPlatform platform, Size size)
+        [InlineData(Size.Big)]
+        [InlineData(Size.Small)]
+        public async Task DemoRun_GetViewersScoreboardAsync(Size size)
         {
             //Arrange
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetViewersScoreboardAsync(platform, size);
+            var result = await client.GetViewersScoreboardAsync(size);
 
             //Assert
             Assert.NotNull(result);
@@ -304,30 +304,30 @@ namespace Nindo.Net.Tests
         }
 
         [Theory]
-        [InlineData(RankViewerPlatform.Twitch, Size.Big)]
-        [InlineData(RankViewerPlatform.Twitch, Size.Small)]
-        public async Task DemoRun_GetPeakViewersScoreboardAsync(RankViewerPlatform platform, Size size)
+        [InlineData(Size.Big)]
+        [InlineData(Size.Small)]
+        public async Task DemoRun_GetPeakViewersScoreboardAsync(Size size)
         {
             //Arrange
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetPeakViewersScoreboardAsync(platform, size);
+            var result = await client.GetPeakViewersScoreboardAsync(size);
 
             //Assert
             Assert.NotNull(result);
         }
 
         [Theory]
-        [InlineData(RankRetweetsPlatform.Twitter, Size.Big)]
-        [InlineData(RankRetweetsPlatform.Twitter, Size.Small)]
-        public async Task DemoRun_GetRetweetsScoreboardAsync(RankRetweetsPlatform platform, Size size)
+        [InlineData(Size.Big)]
+        [InlineData(Size.Small)]
+        public async Task DemoRun_GetRetweetsScoreboardAsync(Size size)
         {
             //Arrange
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetRetweetsScoreboardAsync(platform, size);
+            var result = await client.GetRetweetsScoreboardAsync(size);
 
             //Assert
             Assert.NotNull(result);
