@@ -93,10 +93,10 @@ namespace Nindo.Net
         Task<Subscriber[]> GetSubscribersAsync(RankAllPlatform platform, Size size);
 
         [Get("/ranks/milestones")]
-        Task<Subscriber[]> GetMilestonesAsync();
+        Task<Milestone[]> GetMilestonesAsync();
 
         [Get("/ranks/pastMilestones")]
-        Task<Subscriber[]> GetPastMilestonesAsync();
+        Task<Milestone[]> GetPastMilestonesAsync();
 
         #endregion
 

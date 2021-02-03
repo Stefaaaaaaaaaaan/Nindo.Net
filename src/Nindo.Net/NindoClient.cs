@@ -178,12 +178,12 @@ namespace Nindo.Net
             return _service.GetSubscribersAsync(platform, size);
         }
 
-        public Task<Subscriber[]> GetMilestonesAsync()
+        public Task<Milestone[]> GetMilestonesAsync()
         {
             return _service.GetMilestonesAsync();
         }
 
-        public Task<Subscriber[]> GetPastMilestonesAsync()
+        public Task<Milestone[]> GetPastMilestonesAsync()
         {
             return _service.GetPastMilestonesAsync();
         }
