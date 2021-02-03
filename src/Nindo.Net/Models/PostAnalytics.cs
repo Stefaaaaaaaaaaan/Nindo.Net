@@ -2,7 +2,7 @@
 
 namespace Nindo.Net.Models
 {
-    class PostAnalytics
+    public class PostAnalytics
     {
         [JsonProperty("id")]
         public string Id { get; set; }

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Nindo.Net.Models
 {
-    class PostBase
+    public class PostBase
     {
         [JsonProperty("postID")]
         public string PostId { get; set; }

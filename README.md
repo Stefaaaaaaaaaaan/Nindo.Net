@@ -43,28 +43,5 @@ Or place this line in your `.csproj` & do a `dotnet restore`.
 
 ## 🤔 How To Use
 
-### Creating a request to send to the API.
-
-```cs
-//Initialise a NindoClient
-var client = new RanksClient();
-
-//Call a method to send a request
-var result = await client.GetViewsScoreboardAsync(RankViewerPlatform.Twitch, Size.Big);
-```
-
-## 📚 Clients
-
-### All available clients.
-
-```cs
-var artistClient = new ArtistClient();
-var channelClient = new ChannelClient();
-var couponsClient = new CouponsClient();
-var feedbackClient = new FeedbackClient();
-var postsClient = new PostsClient();
-var ranksClient = new RanksClient();
-var searchClient = new SearchClient();
-var viralClient = new ViralClient();
-```
+[More information about the wrapper on our wiki](https://github.com/AlexGipp/Nindo.Net/wiki)
 
