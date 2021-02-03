@@ -163,6 +163,11 @@ namespace Nindo.Net
             return _service.GetPeakViewersScoreboardAsync(size);
         }
 
+        public Task<Rank[]> GetWatchtimeScoreboardAsync(Size size)
+        {
+            return _service.GetWatchtimeScoreboardAsync(size);
+        }
+
         public Task<Rank[]> GetRetweetsScoreboardAsync(Size size)
         {
             return _service.GetRetweetsScoreboardAsync(size);

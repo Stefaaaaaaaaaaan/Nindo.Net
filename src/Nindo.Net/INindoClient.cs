@@ -83,6 +83,9 @@ namespace Nindo.Net
         [Get("/ranks/charts/twitch/rankPeakViewer/{size}")]
         Task<Rank[]> GetPeakViewersScoreboardAsync(Size size);
 
+        [Get("/ranks/charts/twitch/rankWatchtime/{size}")]
+        Task<Rank[]> GetWatchtimeScoreboardAsync(Size size);
+
         [Get("/ranks/charts/twitter/rankRetweets/{size}")]
         Task<Rank[]> GetRetweetsScoreboardAsync(Size size);
 

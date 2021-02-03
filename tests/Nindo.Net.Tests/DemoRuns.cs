@@ -321,6 +321,21 @@ namespace Nindo.Net.Tests
         [Theory]
         [InlineData(Size.Big)]
         [InlineData(Size.Small)]
+        public async Task DemoRun_GetWatchtimeScoreboardAsync(Size size)
+        {
+            //Arrange
+            NindoClient client = new NindoClient();
+
+            //Act
+            var result = await client.GetWatchtimeScoreboardAsync(size);
+
+            //Assert
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData(Size.Big)]
+        [InlineData(Size.Small)]
         public async Task DemoRun_GetRetweetsScoreboardAsync(Size size)
         {
             //Arrange
