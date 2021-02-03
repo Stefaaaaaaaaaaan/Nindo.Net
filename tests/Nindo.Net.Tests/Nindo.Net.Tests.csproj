@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nindo.Net\Nindo.Net.csproj" />
+    <ProjectReference Include="..\..\src\Nindo.Net\Nindo.Net.csproj" />
   </ItemGroup>
 
 </Project>

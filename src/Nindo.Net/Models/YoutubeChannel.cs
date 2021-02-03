@@ -41,13 +41,13 @@ namespace Nindo.Net.Models
         public ulong TotalDuration { get; set; }
 
         [JsonProperty("rankViews")]
-        public ulong RankViews { get; set; }
+        public ulong? RankViews { get; set; }
 
         [JsonProperty("rankComments")]
-        public ulong RankComments { get; set; }
+        public ulong? RankComments { get; set; }
 
         [JsonProperty("rankLikes")]
-        public ulong RankLikes { get; set; }
+        public ulong? RankLikes { get; set; }
 
         [JsonProperty("rankDislikes")]
         public string RankDislikes { get; set; }
