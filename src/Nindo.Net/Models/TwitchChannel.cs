@@ -1,46 +1,46 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class TwitchChannel : ChannelBase
     {
-        [JsonProperty("live")]
+        [JsonPropertyName("live")]
         public bool Live { get; set; }
 
-        [JsonProperty("sumViews30")]
+        [JsonPropertyName("sumViews30")]
         public ulong SumViewsThirty { get; set; }
 
-        [JsonProperty("peakViewer30")]
+        [JsonPropertyName("peakViewer30")]
         public ulong PeakViewerThirty { get; set; }
 
-        [JsonProperty("sumDuration30")]
+        [JsonPropertyName("sumDuration30")]
         public ulong SumDurationThirty { get; set; }
 
-        [JsonProperty("sumWatchTime30")]
+        [JsonPropertyName("sumWatchTime30")]
         public ulong SumWatchTimeThirty { get; set; }
 
-        [JsonProperty("countStreams30")]
+        [JsonPropertyName("countStreams30")]
         public ulong CountStreamsThirty { get; set; }
 
-        [JsonProperty("avgViewer")]
+        [JsonPropertyName("avgViewer")]
         public ulong AvgViewer { get; set; }
 
-        [JsonProperty("avgDuration")]
+        [JsonPropertyName("avgDuration")]
         public ulong AvgDuration { get; set; }
 
-        [JsonProperty("rankViewer")]
+        [JsonPropertyName("rankViewer")]
         public ulong RankViewer { get; set; }
 
-        [JsonProperty("rankPeakViewer")]
+        [JsonPropertyName("rankPeakViewer")]
         public ulong RankPeakViewer { get; set; }
 
-        [JsonProperty("rankWatchtime")]
+        [JsonPropertyName("rankWatchtime")]
         public ulong RankWatchtime { get; set; }
 
-        [JsonProperty("streamDays")] 
+        [JsonPropertyName("streamDays")] 
         public ulong[] StreamDays { get; set; }
 
-        [JsonProperty("streamHours")] 
+        [JsonPropertyName("streamHours")] 
         public StreamHours[] StreamHours { get; set; }  
 
 

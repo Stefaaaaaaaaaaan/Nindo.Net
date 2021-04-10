@@ -1,26 +1,26 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class MilestoneChannel
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("platform")]
+        [JsonPropertyName("platform")]
         public string Platform { get; set; }
 
-        [JsonProperty("milestone")]
+        [JsonPropertyName("milestone")]
         public bool Milestone { get; set; }
 
-        [JsonProperty("artistID")]
+        [JsonPropertyName("artistID")]
         public string ArtistId { get; set; }
 
-        [JsonProperty("_artist")]
+        [JsonPropertyName("_artist")]
         public ArtistBase ArtistBase { get; set; }
     }
 }

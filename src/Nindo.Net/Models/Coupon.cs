@@ -1,40 +1,40 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Coupon
     {
-        [JsonProperty("timestamp")]
+        [JsonPropertyName("timestamp")]
         public string Views { get; set; }
 
-        [JsonProperty("discount")]
+        [JsonPropertyName("discount")]
         public string Discount { get; set; }
 
-        [JsonProperty("code")]
+        [JsonPropertyName("code")]
         public string Code { get; set; }
 
-        [JsonProperty("url")]
+        [JsonPropertyName("url")]
         public string? Url { get; set; }
 
-        [JsonProperty("terms")]
+        [JsonPropertyName("terms")]
         public string? Terms { get; set; }
 
-        [JsonProperty("valid")]
+        [JsonPropertyName("valid")]
         public bool Valid { get; set; }
 
-        [JsonProperty("validUntil")]
+        [JsonPropertyName("validUntil")]
         public string ValidUntil { get; set; }
 
-        [JsonProperty("artistID")]
+        [JsonPropertyName("artistID")]
         public string ArtistId { get; set; }
 
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("_artist")]
+        [JsonPropertyName("_artist")]
         public CouponArtist Artist { get; set; }
 
-        [JsonProperty("_brand")]
+        [JsonPropertyName("_brand")]
         public CouponBrand Brand { get; set; }
     }
 }

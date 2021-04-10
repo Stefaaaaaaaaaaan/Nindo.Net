@@ -1,16 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Milestone
     {
-        [JsonProperty("currentSubs")]
+        [JsonPropertyName("currentSubs")]
         public ulong CurrentSubs { get; set; }
 
-        [JsonProperty("expectedTime")] 
+        [JsonPropertyName("expectedTime")] 
         public string ExpectedTime { get; set; }
 
-        [JsonProperty("_channel")] 
+        [JsonPropertyName("_channel")] 
         public MilestoneChannel MilestoneChannel { get; set; }
     }
 }

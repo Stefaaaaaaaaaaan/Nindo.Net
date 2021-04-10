@@ -1,37 +1,37 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class TwitterChannel : ChannelBase
     {
-        [JsonProperty("avgLikes5")]
+        [JsonPropertyName("avgLikes5")]
         public ulong AvgLikesFive { get; set; }
 
-        [JsonProperty("avgReplies5")]
+        [JsonPropertyName("avgReplies5")]
         public ulong AvgRepliesFive { get; set; }
 
-        [JsonProperty("avgRetweets5")]
+        [JsonPropertyName("avgRetweets5")]
         public ulong AvgRetweetsFive { get; set; }
 
-        [JsonProperty("avgEngagement5")]
+        [JsonPropertyName("avgEngagement5")]
         public double AvgEngagementFive { get; set; }
 
-        [JsonProperty("countTweets")]
+        [JsonPropertyName("countTweets")]
         public double CountTweets { get; set; }
 
-        [JsonProperty("countRetweets")]
+        [JsonPropertyName("countRetweets")]
         public double CountRetweets { get; set; }
 
-        [JsonProperty("countReplies")]
+        [JsonPropertyName("countReplies")]
         public double CountReplies { get; set; }
 
-        [JsonProperty("rankLikes")]
+        [JsonPropertyName("rankLikes")]
         public ulong RankLikes { get; set; }
 
-        [JsonProperty("rankReplies")]
+        [JsonPropertyName("rankReplies")]
         public ulong RankReplies { get; set; }
 
-        [JsonProperty("rankRetweets")]
+        [JsonPropertyName("rankRetweets")]
         public ulong RrankRetweets { get; set; }
     }
 }

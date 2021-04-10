@@ -1,14 +1,14 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class StreamHours
     {
-        [JsonProperty("stop")] 
+        [JsonPropertyName("stop")] 
         public DateTime Stop { get; set; }
 
-        [JsonProperty("start")]
+        [JsonPropertyName("start")]
         public DateTime Start { get; set; }
     }
 }

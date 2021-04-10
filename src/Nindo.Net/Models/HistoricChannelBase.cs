@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class HistoricChannelBase
     {
-        [JsonProperty("timestamp")]
+        [JsonPropertyName("timestamp")]
         public string Timestamp { get; set; }
 
-        [JsonProperty("followers")]
+        [JsonPropertyName("followers")]
         public ulong Followers { get; set; }
     }
 }

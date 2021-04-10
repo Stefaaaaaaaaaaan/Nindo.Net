@@ -1,29 +1,29 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class CouponArtist
     {
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("brandID")]
-        public string? BrandId { get; set; }
+        [JsonPropertyName("brandID")]
+        public ulong? BrandId { get; set; }
 
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("serachChannels")]
+        [JsonPropertyName("serachChannels")]
         public string[]? SerachChannels { get; set; }
 
-        [JsonProperty("channels")]
+        [JsonPropertyName("channels")]
         public string[]? Channels { get; set; }
 
-        [JsonProperty("platform")]
+        [JsonPropertyName("platform")]
         public string Platform { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
     }
 }

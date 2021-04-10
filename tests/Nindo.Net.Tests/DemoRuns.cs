@@ -31,7 +31,7 @@ namespace Nindo.Net.Tests
 
         [Theory]
         [InlineData("bd3c3e4b2794394e62d0ba76d0ee0c43")]
-        [InlineData("f8c1e101fc05d6da986a14735c8b9fea")]
+        [InlineData("4bb3cf54d955959da6022ac77bde79f7")]
         public async Task DemoRun_GetYouTubeChannelInformationAsync(string Id)
         {
             //Arrange
@@ -90,8 +90,8 @@ namespace Nindo.Net.Tests
         }
 
         [Theory]
-        [InlineData("39580de32b18ddf0cc6ee12de8607db4")]
-        [InlineData("39af0e94ee28126f1c80ff19e5c05839")]
+        [InlineData("4c7ba12d66d4190555664ae74a279308")]
+        [InlineData("afd734aa61ece46030f7c5c102e19719")]
         public async Task DemoRun_GetTwitterChannelInformationAsync(string Id)
         {
             //Arrange

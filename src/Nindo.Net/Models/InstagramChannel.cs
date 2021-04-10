@@ -1,31 +1,31 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class InstagramChannel : ChannelBase
     {
-        [JsonProperty("totalPosts")]
+        [JsonPropertyName("totalPosts")]
         public ulong TotalPosts { get; set; }
 
-        [JsonProperty("totalIGTV")]
+        [JsonPropertyName("totalIGTV")]
         public ulong TotalIgtv { get; set; }
 
-        [JsonProperty("avgLikes5")]
+        [JsonPropertyName("avgLikes5")]
         public ulong AvgLikesFive { get; set; }
 
-        [JsonProperty("avgComments5")]
+        [JsonPropertyName("avgComments5")]
         public ulong AvgCommentsFive { get; set; }
 
-        [JsonProperty("avgEngagement5")]
+        [JsonPropertyName("avgEngagement5")]
         public double AvgEngagementFive { get; set; }
 
-        [JsonProperty("sumPosts30")]
+        [JsonPropertyName("sumPosts30")]
         public ulong SumPostsThirty { get; set; }
 
-        [JsonProperty("rankLikes")]
+        [JsonPropertyName("rankLikes")]
         public ulong RankLikes { get; set; }
 
-        [JsonProperty("rankComments")]
+        [JsonPropertyName("rankComments")]
         public ulong RankComments { get; set; }
     }
 }

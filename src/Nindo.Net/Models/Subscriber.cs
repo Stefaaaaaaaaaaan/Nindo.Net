@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Subscriber : Rank
     {
-        [JsonProperty("_artist")]
+        [JsonPropertyName("_artist")]
         public ArtistBase Artist { get; set; }
 
-        [JsonProperty("diff")]
+        [JsonPropertyName("diff")]
         public int? Diff { get; set; }
     }
 }

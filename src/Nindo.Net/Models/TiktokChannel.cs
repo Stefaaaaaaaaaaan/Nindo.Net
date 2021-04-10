@@ -1,46 +1,46 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class TiktokChannel : ChannelBase
     {
-        [JsonProperty("followings")] 
+        [JsonPropertyName("followings")] 
         public string Followings { get; set; }
 
-        [JsonProperty("totalLikes")]
+        [JsonPropertyName("totalLikes")]
         public string TotalLikes { get; set; }
 
-        [JsonProperty("likesGiven")]
+        [JsonPropertyName("likesGiven")]
         public string LikesGiven { get; set; }
 
-        [JsonProperty("totalPosts")]
+        [JsonPropertyName("totalPosts")]
         public string TotalPosts { get; set; }
 
-        [JsonProperty("avgLikes5")]
+        [JsonPropertyName("avgLikes5")]
         public ulong AvgLikesFive { get; set; }
 
-        [JsonProperty("avgComments5")]
+        [JsonPropertyName("avgComments5")]
         public ulong AvgCommentsFive { get; set; }
 
-        [JsonProperty("avgShares5")]
+        [JsonPropertyName("avgShares5")]
         public ulong AvgSharesFive { get; set; }
 
-        [JsonProperty("avgViews5")]
+        [JsonPropertyName("avgViews5")]
         public ulong AvgViewsFive { get; set; }
 
-        [JsonProperty("avgEngagement5")]
+        [JsonPropertyName("avgEngagement5")]
         public double AvgEngagementFive { get; set; }
 
-        [JsonProperty("rankLikes")]
+        [JsonPropertyName("rankLikes")]
         public ulong? RankLikes { get; set; }
 
-        [JsonProperty("rankComments")]
+        [JsonPropertyName("rankComments")]
         public string RankComments { get; set; }
 
-        [JsonProperty("rankShares")]
+        [JsonPropertyName("rankShares")]
         public string RankShares { get; set; }
 
-        [JsonProperty("rankViews")]
+        [JsonPropertyName("rankViews")]
         public ulong? RankViews { get; set; }
     }
 }

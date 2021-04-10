@@ -1,23 +1,23 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class CouponBrand
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("url")]
+        [JsonPropertyName("url")]
         public Uri Url { get; set; }
 
-        [JsonProperty("branch")]
+        [JsonPropertyName("branch")]
         public string Branch { get; set; }
 
-        [JsonProperty("color")]
+        [JsonPropertyName("color")]
         public string? Color { get; set; }
     }
 }

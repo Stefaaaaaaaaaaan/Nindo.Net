@@ -1,7 +1,6 @@
 ﻿using System;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Nindo.Net.Models;
 using Nindo.Net.Models.Enums;
 using Refit;
@@ -12,12 +11,9 @@ namespace Nindo.Net
     {
         private static readonly RefitSettings Settings = new RefitSettings
         {
-            ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings
+            ContentSerializer = new SystemTextJsonContentSerializer(new JsonSerializerOptions
             {
-                ContractResolver = new DefaultContractResolver
-                {
-                    NamingStrategy = new CamelCaseNamingStrategy()
-                }
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             })
         };
 

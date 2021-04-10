@@ -1,61 +1,61 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class YoutubeChannel : ChannelBase
     {
-        [JsonProperty("sumViews30")]
+        [JsonPropertyName("sumViews30")]
         public ulong SumViewsThirty { get; set; }
 
-        [JsonProperty("avgViews5")]
+        [JsonPropertyName("avgViews5")]
         public ulong AvgViewsFive { get; set; }
 
-        [JsonProperty("avgLikes5")]
+        [JsonPropertyName("avgLikes5")]
         public ulong AvgLikesFive { get; set; }
 
-        [JsonProperty("avgDislikes5")]
+        [JsonPropertyName("avgDislikes5")]
         public ulong AvgDislikesFive { get; set; }
 
-        [JsonProperty("avgComments5")]
+        [JsonPropertyName("avgComments5")]
         public ulong AvgCommentsFive { get; set; }
 
-        [JsonProperty("avgEngagement5")]
+        [JsonPropertyName("avgEngagement5")]
         public double AvgEngagementFive { get; set; }
 
-        [JsonProperty("totalViews")]
+        [JsonPropertyName("totalViews")]
         public ulong TotalViews { get; set; }
 
-        [JsonProperty("totalVideos")]
+        [JsonPropertyName("totalVideos")]
         public ulong TotalVideos { get; set; }
 
-        [JsonProperty("totalDeletedVideos")]
+        [JsonPropertyName("totalDeletedVideos")]
         public ulong TotalDeletedVideos { get; set; }
 
-        [JsonProperty("videosPerMonth")]
+        [JsonPropertyName("videosPerMonth")]
         public ulong VideosPerMonth { get; set; }
 
-        [JsonProperty("avgDuration")]
+        [JsonPropertyName("avgDuration")]
         public ulong AvgDuration { get; set; }
 
-        [JsonProperty("totalDuration")]
+        [JsonPropertyName("totalDuration")]
         public ulong TotalDuration { get; set; }
 
-        [JsonProperty("rankViews")]
+        [JsonPropertyName("rankViews")]
         public ulong? RankViews { get; set; }
 
-        [JsonProperty("rankComments")]
+        [JsonPropertyName("rankComments")]
         public ulong? RankComments { get; set; }
 
-        [JsonProperty("rankLikes")]
+        [JsonPropertyName("rankLikes")]
         public ulong? RankLikes { get; set; }
 
-        [JsonProperty("rankDislikes")]
+        [JsonPropertyName("rankDislikes")]
         public string RankDislikes { get; set; }
 
-        [JsonProperty("calculatedDailyViews")]
+        [JsonPropertyName("calculatedDailyViews")]
         public string CalculatedDailyViews { get; set; }
 
-        [JsonProperty("estimateSubs")]
+        [JsonPropertyName("estimateSubs")]
         public string EstimateSubs { get; set; }
     }
 }

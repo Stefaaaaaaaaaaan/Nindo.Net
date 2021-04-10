@@ -1,50 +1,50 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class ChannelBase
     {
-        [JsonProperty("id")] 
+        [JsonPropertyName("id")] 
         public string Id { get; set; }
 
-        [JsonProperty("name")] 
+        [JsonPropertyName("name")] 
         public string Name { get; set; }
 
-        [JsonProperty("channelID")]
+        [JsonPropertyName("channelID")]
         public string ChannelId { get; set; }
 
-        [JsonProperty("userID")]
+        [JsonPropertyName("userID")]
         public string UserId { get; set; }
 
-        [JsonProperty("platform")]
+        [JsonPropertyName("platform")]
         public string Platform { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("isDeleted")]
+        [JsonPropertyName("isDeleted")]
         public bool IsDeleted { get; set; }
 
-        [JsonProperty("isChartPlaced")]
+        [JsonPropertyName("isChartPlaced")]
         public bool IsChartPlaced { get; set; }
 
-        [JsonProperty("subscribers")]
+        [JsonPropertyName("subscribers")]
         public ulong Subscribers { get; set; }
 
-        [JsonProperty("subGain30")]
+        [JsonPropertyName("subGain30")]
         public long? SubGainThirty { get; set; }
 
-        [JsonProperty("rankSubGain")]
-        public string RankSubGain { get; set; }
+        [JsonPropertyName("rankSubGain")]
+        public int? RankSubGain { get; set; }
 
-        [JsonProperty("rank")]
+        [JsonPropertyName("rank")]
         public int? Rank { get; set; }
 
-        [JsonProperty("lastPost")]
+        [JsonPropertyName("lastPost")]
         public string LastPost { get; set; }
 
-        [JsonProperty("diff")]
+        [JsonPropertyName("diff")]
         public string Diff { get; set; }
     }
 }

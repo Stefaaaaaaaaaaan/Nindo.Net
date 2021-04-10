@@ -1,41 +1,41 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class ArtistChannel
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("channelID")]
+        [JsonPropertyName("channelID")]
         public string ChannelId { get; set; }
 
-        [JsonProperty("platform")]
+        [JsonPropertyName("platform")]
         public string Platform { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("isDeleted")]
+        [JsonPropertyName("isDeleted")]
         public bool IsDeleted { get; set; }
 
-        [JsonProperty("isChartPlaced")]
+        [JsonPropertyName("isChartPlaced")]
         public bool IsChartPlaced { get; set; }
 
-        [JsonProperty("isGerman")]
+        [JsonPropertyName("isGerman")]
         public bool IsGerman { get; set; }
 
-        [JsonProperty("ageInDB")]
+        [JsonPropertyName("ageInDB")]
         public ulong AgeInDb { get; set; }
 
-        [JsonProperty("subscribers")]
+        [JsonPropertyName("subscribers")]
         public ulong Subscribers { get; set; }
 
-        [JsonProperty("rank")]
+        [JsonPropertyName("rank")]
         public ulong? Rank { get; set; }
     }
 }

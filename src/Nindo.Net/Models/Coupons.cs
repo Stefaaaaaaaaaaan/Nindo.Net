@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Coupons
     {
-        [JsonProperty("coupons")]
+        [JsonPropertyName("coupons")]
         public Coupon[] Coupon { get; set; }
 
-        [JsonProperty("hasMore")]
-        public string HasMore { get; set; }
+        [JsonPropertyName("hasMore")]
+        public bool HasMore { get; set; }
     }
 }

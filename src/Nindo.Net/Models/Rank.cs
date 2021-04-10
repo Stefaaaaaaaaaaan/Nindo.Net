@@ -1,35 +1,35 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Rank
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("rank")]
+        [JsonPropertyName("rank")]
         public int RankNumber { get; set; }
 
-        [JsonProperty("userID")]
+        [JsonPropertyName("userID")]
         public string UserId { get; set; }
 
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public long Value { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("artistName")]
+        [JsonPropertyName("artistName")]
         public string ArtistName { get; set; }
 
-        [JsonProperty("artistID")]
+        [JsonPropertyName("artistID")]
         public string ArtistId { get; set; }
 
-        [JsonProperty("showChannelName")]
+        [JsonPropertyName("showChannelName")]
         public bool ShowChannelName { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
     }

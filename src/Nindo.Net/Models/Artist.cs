@@ -1,23 +1,23 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Artist : ArtistBase
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("_genres")]
+        [JsonPropertyName("_genres")]
         public Genre[] Genre{ get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("avatarPlatform")]
+        [JsonPropertyName("avatarPlatform")]
         public string AvatarPlatform { get; set; }
 
-        [JsonProperty("_channels")]
+        [JsonPropertyName("_channels")]
         public ArtistChannel[] Channels { get; set; }
     }
 }

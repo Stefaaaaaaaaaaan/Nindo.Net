@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class CouponBase
     {
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty("content")]
+        [JsonPropertyName("content")]
         public CouponContent Content { get; set; }
 
-        [JsonProperty("current")]
+        [JsonPropertyName("current")]
         public string Current { get; set; }
     }
 }

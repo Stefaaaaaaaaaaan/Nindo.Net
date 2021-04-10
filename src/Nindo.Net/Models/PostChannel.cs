@@ -1,26 +1,26 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class PostChannel
     {
-        [JsonProperty("channelID")]
+        [JsonPropertyName("channelID")]
         public string ChannelId { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("cachedAvatar")]
+        [JsonPropertyName("cachedAvatar")]
         public bool CachedAvatar { get; set; }
 
-        [JsonProperty("lang")]
+        [JsonPropertyName("lang")]
         public string Lang { get; set; }
 
-        [JsonProperty("lastPostID")]
+        [JsonPropertyName("lastPostID")]
         public string LastPostId { get; set; }
 
-        [JsonProperty("_artist")]
+        [JsonPropertyName("_artist")]
         public PostArtistBase ArtistBase { get; set; }
     }
 }

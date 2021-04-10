@@ -1,23 +1,23 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class PostBase
     {
-        [JsonProperty("postID")]
+        [JsonPropertyName("postID")]
         public string PostId { get; set; }
 
-        [JsonProperty("content")]
+        [JsonPropertyName("content")]
         public string Content { get; set; }
 
-        [JsonProperty("published")]
+        [JsonPropertyName("published")]
         public DateTime Published { get; set; }
 
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [JsonProperty("analytics")]
+        [JsonPropertyName("analytics")]
         public PostAnalytics[] Analytics { get; set; }
     }
 }

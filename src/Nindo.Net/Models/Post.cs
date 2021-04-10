@@ -1,31 +1,31 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class Post
     {
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("contentChecked")]
+        [JsonPropertyName("contentChecked")]
         public bool ContentChecked { get; set; }
 
-        [JsonProperty("FSK18")]
+        [JsonPropertyName("FSK18")]
         public bool FskEigteen { get; set; }
 
-        [JsonProperty("clickbait")]
+        [JsonPropertyName("clickbait")]
         public string Clickbait { get; set; }
 
-        [JsonProperty("shitstorm")]
+        [JsonPropertyName("shitstorm")]
         public string Shitstorm { get; set; }
 
-        [JsonProperty("ad")]
+        [JsonPropertyName("ad")]
         public string Ad { get; set; }
 
-        [JsonProperty("potentialAd")]
+        [JsonPropertyName("potentialAd")]
         public string PotentialAd { get; set; }
 
-        [JsonProperty("_channel")]
+        [JsonPropertyName("_channel")]
         public PostChannel Channel { get; set; }
     }
 }

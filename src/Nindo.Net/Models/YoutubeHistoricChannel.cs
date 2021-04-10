@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class YoutubeHistoricChannel : HistoricChannelBase
     {
-        [JsonProperty("views")]
+        [JsonPropertyName("views")]
         public ulong? Views { get; set; }
     }
 }

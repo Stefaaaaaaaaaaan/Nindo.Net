@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nindo.Net.Models
 {
     public class PostAnalytics
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("age")]
+        [JsonPropertyName("age")]
         public ulong? Age { get; set; }
 
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public ulong Value { get; set; }
 
-        [JsonProperty("analyticsType")]
+        [JsonPropertyName("analyticsType")]
         public ulong AnalyticsType { get; set; }
 
-        [JsonProperty("postID")]
+        [JsonPropertyName("postID")]
         public string PostId { get; set; }
 
-        [JsonProperty("channelID")]
+        [JsonPropertyName("channelID")]
         public string ChannelId { get; set; }
     }
 }
