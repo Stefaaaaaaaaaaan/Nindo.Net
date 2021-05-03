@@ -194,9 +194,9 @@ namespace Nindo.Net
             return _service.GetCouponsAsync(offset);
         }
 
-        public Task<string[]> GetCouponBranchesAsync()
+        public Task<string[]> GetCouponCategorysAsync()
         {
-            return _service.GetCouponBranchesAsync();
+            return _service.GetCouponCategorysAsync();
         }
 
         public Task<CouponBrands[]> GetCouponBrandsAsync()
@@ -212,12 +212,12 @@ namespace Nindo.Net
             return _service.GetCouponsByCategoryAsync(category, offset);
         }
 
-        public Task<Coupons> GetCouponsByBranchAsync(string branch, int offset = 0)
+        public Task<Coupons> GetCouponsByBrandAsync(string brand, int offset = 0)
         {
-            if (string.IsNullOrEmpty(branch))
-                throw new ArgumentNullException(nameof(branch));
+            if (string.IsNullOrEmpty(brand))
+                throw new ArgumentNullException(nameof(brand));
 
-            return _service.GetCouponsByBranchAsync(branch, offset);
+            return _service.GetCouponsByBrandAsync(brand, offset);
         }
     }
 }

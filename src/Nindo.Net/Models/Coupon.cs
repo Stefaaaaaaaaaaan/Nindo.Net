@@ -5,7 +5,7 @@ namespace Nindo.Net.Models
     public class Coupon
     {
         [JsonPropertyName("timestamp")]
-        public string Views { get; set; }
+        public string Timestamp { get; set; }
 
         [JsonPropertyName("discount")]
         public string Discount { get; set; }

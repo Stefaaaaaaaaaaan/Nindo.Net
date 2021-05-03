@@ -467,7 +467,7 @@ namespace Nindo.Net.Tests
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetCouponBranchesAsync();
+            var result = await client.GetCouponCategorysAsync();
 
             //Assert
             Assert.NotNull(result);
@@ -494,13 +494,13 @@ namespace Nindo.Net.Tests
         [InlineData("7b8d313719d705353b91a81738c450cc")]
         [InlineData("d6555d5e63cb751f6c094ed2fe8f542a")]
         [InlineData("03d9e19686a02b604b43fe181eaefac0")]
-        public async Task DemoRun_GetCouponsForBranchAsync(string id)
+        public async Task DemoRun_GetCouponsForBrandAsync(string id)
         {
             //Arrange
             NindoClient client = new NindoClient();
 
             //Act
-            var result = await client.GetCouponsByBranchAsync(id);
+            var result = await client.GetCouponsByBrandAsync(id);
 
             //Assert
             Assert.NotNull(result);
