@@ -15,10 +15,10 @@ namespace Nindo.Net.Models
         public string Id { get; set; }
 
         [JsonPropertyName("serachChannels")]
-        public string[]? SerachChannels { get; set; }
+        public string[] SerachChannels { get; set; }
 
         [JsonPropertyName("channels")]
-        public string[]? Channels { get; set; }
+        public string[] Channels { get; set; }
 
         [JsonPropertyName("platform")]
         public string Platform { get; set; }

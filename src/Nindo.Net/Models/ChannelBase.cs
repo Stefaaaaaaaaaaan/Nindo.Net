@@ -30,7 +30,7 @@ namespace Nindo.Net.Models
         public bool IsChartPlaced { get; set; }
 
         [JsonPropertyName("subscribers")]
-        public ulong Subscribers { get; set; }
+        public ulong? Subscribers { get; set; }
 
         [JsonPropertyName("subGain30")]
         public long? SubGainThirty { get; set; }

@@ -8,6 +8,6 @@ namespace Nindo.Net.Models
         public string Timestamp { get; set; }
 
         [JsonPropertyName("followers")]
-        public ulong Followers { get; set; }
+        public ulong? Followers { get; set; }
     }
 }

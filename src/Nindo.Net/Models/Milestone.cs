@@ -6,7 +6,7 @@ namespace Nindo.Net.Models
     public class Milestone
     {
         [JsonPropertyName("currentSubs")]
-        public ulong CurrentSubs { get; set; }
+        public ulong? CurrentSubs { get; set; }
 
         [JsonPropertyName("expectedTime")] 
         public string ExpectedTime { get; set; }

@@ -18,6 +18,6 @@ namespace Nindo.Net.Models
         public string Branch { get; set; }
 
         [JsonPropertyName("color")]
-        public string? Color { get; set; }
+        public string Color { get; set; }
     }
 }

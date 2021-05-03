@@ -14,10 +14,10 @@ namespace Nindo.Net.Models
         public string Code { get; set; }
 
         [JsonPropertyName("url")]
-        public string? Url { get; set; }
+        public string Url { get; set; }
 
         [JsonPropertyName("terms")]
-        public string? Terms { get; set; }
+        public string Terms { get; set; }
 
         [JsonPropertyName("valid")]
         public bool Valid { get; set; }

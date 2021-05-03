@@ -5,40 +5,40 @@ namespace Nindo.Net.Models
     public class YoutubeChannel : ChannelBase
     {
         [JsonPropertyName("sumViews30")]
-        public ulong SumViewsThirty { get; set; }
+        public ulong? SumViewsThirty { get; set; }
 
         [JsonPropertyName("avgViews5")]
-        public ulong AvgViewsFive { get; set; }
+        public ulong? AvgViewsFive { get; set; }
 
         [JsonPropertyName("avgLikes5")]
-        public ulong AvgLikesFive { get; set; }
+        public ulong? AvgLikesFive { get; set; }
 
         [JsonPropertyName("avgDislikes5")]
-        public ulong AvgDislikesFive { get; set; }
+        public ulong? AvgDislikesFive { get; set; }
 
         [JsonPropertyName("avgComments5")]
-        public ulong AvgCommentsFive { get; set; }
+        public ulong? AvgCommentsFive { get; set; }
 
         [JsonPropertyName("avgEngagement5")]
-        public double AvgEngagementFive { get; set; }
+        public double? AvgEngagementFive { get; set; }
 
         [JsonPropertyName("totalViews")]
-        public ulong TotalViews { get; set; }
+        public ulong? TotalViews { get; set; }
 
         [JsonPropertyName("totalVideos")]
-        public ulong TotalVideos { get; set; }
+        public ulong? TotalVideos { get; set; }
 
         [JsonPropertyName("totalDeletedVideos")]
-        public ulong TotalDeletedVideos { get; set; }
+        public ulong? TotalDeletedVideos { get; set; }
 
         [JsonPropertyName("videosPerMonth")]
-        public ulong VideosPerMonth { get; set; }
+        public ulong? VideosPerMonth { get; set; }
 
         [JsonPropertyName("avgDuration")]
-        public ulong AvgDuration { get; set; }
+        public ulong? AvgDuration { get; set; }
 
         [JsonPropertyName("totalDuration")]
-        public ulong TotalDuration { get; set; }
+        public ulong? TotalDuration { get; set; }
 
         [JsonPropertyName("rankViews")]
         public ulong? RankViews { get; set; }

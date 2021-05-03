@@ -17,19 +17,19 @@ namespace Nindo.Net.Models
         public string TotalPosts { get; set; }
 
         [JsonPropertyName("avgLikes5")]
-        public ulong AvgLikesFive { get; set; }
+        public ulong? AvgLikesFive { get; set; }
 
         [JsonPropertyName("avgComments5")]
-        public ulong AvgCommentsFive { get; set; }
+        public ulong? AvgCommentsFive { get; set; }
 
         [JsonPropertyName("avgShares5")]
-        public ulong AvgSharesFive { get; set; }
+        public ulong? AvgSharesFive { get; set; }
 
         [JsonPropertyName("avgViews5")]
-        public ulong AvgViewsFive { get; set; }
+        public ulong? AvgViewsFive { get; set; }
 
         [JsonPropertyName("avgEngagement5")]
-        public double AvgEngagementFive { get; set; }
+        public double? AvgEngagementFive { get; set; }
 
         [JsonPropertyName("rankLikes")]
         public ulong? RankLikes { get; set; }

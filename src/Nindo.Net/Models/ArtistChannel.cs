@@ -30,10 +30,10 @@ namespace Nindo.Net.Models
         public bool IsGerman { get; set; }
 
         [JsonPropertyName("ageInDB")]
-        public ulong AgeInDb { get; set; }
+        public ulong? AgeInDb { get; set; }
 
         [JsonPropertyName("subscribers")]
-        public ulong Subscribers { get; set; }
+        public ulong? Subscribers { get; set; }
 
         [JsonPropertyName("rank")]
         public ulong? Rank { get; set; }

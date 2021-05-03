@@ -15,7 +15,7 @@ namespace Nindo.Net.Models
         public string Type { get; set; }
 
         [JsonPropertyName("value")]
-        public ulong Value { get; set; }
+        public ulong? Value { get; set; }
 
         [JsonPropertyName("timestamp")]
         public DateTime Timestamp { get; set; }

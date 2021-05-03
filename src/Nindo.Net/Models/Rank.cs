@@ -15,7 +15,7 @@ namespace Nindo.Net.Models
         public string UserId { get; set; }
 
         [JsonPropertyName("value")]
-        public long Value { get; set; }
+        public long? Value { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
